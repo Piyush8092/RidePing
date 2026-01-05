@@ -23,7 +23,6 @@ const Navbar = () => {
           RidePing
         </div>
 
-        {/* Desktop Menu (unchanged) */}
         <div className="hidden sm:block">
           {links.map((link) => (
             <a

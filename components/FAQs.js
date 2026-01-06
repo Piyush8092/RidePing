@@ -22,8 +22,6 @@ const FAQs = () => {
   return (
    <section className="faq py-12 px-6 md:px-20 lg:px-40 bg-white text-black">
       <div className="max-w-5xl mx-auto space-y-6">
-        
-        {/* Title Container */}
       <div className="relative w-full text-center mb-6">
       {/* Heading */}
       <h2
@@ -40,8 +38,7 @@ const FAQs = () => {
         Frequently Asked Questions
       </h2>
 
-      {/* Underline / Ellipse */}
-      <div className="relative w-[96%] sm:w-[380px] md:w-[480px] h-7 mx-auto -mt-6">
+      <div className="relative w-[96%] sm:w-95 md:w-120 h-7 mx-auto -mt-6">
         <Image
           src={UnderlineImg}
             alt="underline decoration"

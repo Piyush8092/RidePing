@@ -27,14 +27,14 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <div className="max-w-screen  mx-auto bg-white shadow-sm p-8">
+    <div className="max-w-screen  mx-auto bg-white shadow-sm p-6">
 <div className="relative w-full text-center mb-6">
   <h2
     className="
       relative z-20
-      font-monoIbm
-      text-3xl sm:text-4xl md:text-5xl
-      font-bold
+      font-ibmPlexMono
+      text-2xl sm:text-4xl md:text-5xl
+      font-semibold
       text-black
       mx-auto max-w-full md:max-w-3xl
       leading-none

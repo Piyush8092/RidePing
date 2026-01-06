@@ -28,7 +28,7 @@ const Navbar = () => {
             <a
               key={link}
               href="#"
-               className="inline-block text-[#1F1F1F] text-s px-4 font-bold border-b-2 border-transparent hover:border-red-500"
+               className="inline-block text-gray-700 text-s px-4 font-bold border-b-2 border-transparent hover:border-red-500  hover:text-black"
             >
               {link}
             </a>

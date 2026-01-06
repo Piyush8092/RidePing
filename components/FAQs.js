@@ -20,28 +20,39 @@ const FAQs = () => {
   };
 
   return (
-   <section className="faq py-12 px-6 md:px-20 lg:px-40 bg-amber-50 text-black">
+   <section className="faq py-12 px-6 md:px-20 lg:px-40 bg-white text-black">
       <div className="max-w-5xl mx-auto space-y-6">
         
         {/* Title Container */}
-       <div className="relative inline-block w-full text-center md:text-leftz">
-  <h1 className="relative z-10 text-3xl md:text-5xl font-bold pb-2">
-    Frequently Asked Questions
-  </h1>
-  
-  {/* Ellipse Image Container */}
-  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[85%] sm:w-[320px] md:w-120 h-3 md:h-5 opacity-90 pointer-events-none">
-    <Image 
-      src={UnderlineImg} 
-      alt="underline decoration" 
-      fill
-      className="object-fill" 
-      priority
-    />
-  </div>
-</div>
+      <div className="relative w-full text-center mb-6">
+      {/* Heading */}
+      <h2
+        className="
+          relative z-20
+          font-monoIbm
+          text-3xl sm:text-4xl md:text-5xl
+          font-bold
+          text-black
+          mx-auto max-w-full md:max-w-3xl
+          leading-none
+        "
+      >
+        Frequently Asked Questions
+      </h2>
 
-        <div className="divide-y divide-amber-200 mt-4">
+      {/* Underline / Ellipse */}
+      <div className="relative w-[96%] sm:w-[380px] md:w-[480px] h-7 mx-auto -mt-6">
+        <Image
+          src={UnderlineImg}
+            alt="underline decoration"
+          fill
+          className="object-contain object-bottom scale-y-125 origin-bottom"
+          priority
+        />
+      </div>
+    </div>
+
+        <div className="divide-y divide-gray-200 mt-4">
           {data.map((d, index) => (
             <React.Fragment key={d.id}>
               <Questions

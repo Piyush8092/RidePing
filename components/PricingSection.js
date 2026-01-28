@@ -61,7 +61,7 @@ const PricingSection = () => {
 </div>
       </div>
 
-      {/* Cards Wrapper (CENTERED & CLOSER) */}
+      
       <div className="flex justify-center">
         <div className="flex flex-col md:flex-row gap-3 lg:gap-4">
           {plans.map((plan, index) => (

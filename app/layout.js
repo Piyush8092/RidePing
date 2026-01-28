@@ -1,11 +1,7 @@
-import Navbar from "@/components/Navbar.js";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import FAQs from "@/components/FAQs";
-import TestimonialsSection from "@/components/Testinomials";
-import PricingSection from "@/components/PricingSection";
-
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,24 +21,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full overflow-hidden">
-      <body
-        className={`
-          ${inter.variable}
-          ${ibmPlexMono.variable}
-          font-sans antialiased
-          h-full overflow-hidden overscroll-none touch-none
-        `}
-      >
-        {/* Locked scroll container */}
-        <div className="h-full overflow-y-scroll overflow-x-hidden overscroll-none">
-          <Navbar />
-          {children}
-          <TestimonialsSection />
-          <PricingSection/>
-          <FAQs />
-          <Footer />
-        </div>
+    <html lang="en">
+      <body className={`${inter.variable} ${ibmPlexMono.variable}`}>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

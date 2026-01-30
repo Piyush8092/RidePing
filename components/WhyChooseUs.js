@@ -11,12 +11,12 @@ export default function WhyChooseUs() {
     offset: ["start end", "end start"],
   });
 
-  const busY = useTransform(scrollYProgress, [0, 1], [0, 420]);
+  const busY = useTransform(scrollYProgress, [0.1, 1], [0, 420]);
 
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-black pt-10 pb-24 px-4 min-h-[200vh]"
+      className="w-full bg-black pt-10 pb-24 px-4 min-h-[100vh]"
     >
       {/* Heading */}
       <div className="text-center mb-12">

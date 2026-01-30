@@ -4,7 +4,7 @@ import UserCard from "@/components/testimonials/UserCard";
 import UnderlineImg from "@/components/assets/Ellipse1.png"; 
 import Image from "next/image";
 
-const TestialsSection = () => {
+const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Ganesh M. Parekh",

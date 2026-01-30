@@ -14,11 +14,11 @@ import circle from "@/components/assets/phones/circle.png";
 const phones = [p1, p2, p3, p4, p5];
 
 const slots = [
-  { x: 0, z: 40, scale: 1 },
-  { x: -90, z: 20, scale: 0.95 },
-  { x: -160, z: 10, scale: 0.9 },
-  { x: 90, z: 20, scale: 0.95 },
-  { x: 160, z: 10, scale: 0.9 },
+  { x: 0, z: 40, scale: 1, opacity:1 },
+  { x: -90, z: 20, scale: 0.95, opacity:1 },
+  { x: -160, z: 10, scale: 0.9, opacity:1 },
+  { x: 160, z: 10, scale: 0.9, opacity:1},
+  { x: 90, z: 20, scale: 0.95, opacity:1},
 ];
 
 export default function HeroPhones() {
@@ -58,6 +58,7 @@ export default function HeroPhones() {
               animate={{
                 x: slot.x,
                 scale: slot.scale,
+                opacity:slot.opacity,
               }}
               transition={{ duration: 1.8, ease: "easeInOut" }}
               className="absolute top-1/2 -translate-y-1/2"
@@ -69,7 +70,7 @@ export default function HeroPhones() {
                 alt="phone"
                 width={260}
                 height={400}
-                className="object-contain"
+                className="object-contain "
               />
             </motion.div>
           );

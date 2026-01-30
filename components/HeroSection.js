@@ -2,98 +2,87 @@
 
 import Image from "next/image";
 
+import curveBg from "@/components/assets/HeroSection/curvebg.png";
+import city from "@/components/assets/HeroSection/city1.png";
+import busStop from "@/components/assets/HeroSection/bustop.png";
 import playbutton from "@/components/assets/HeroSection/googleplaybutton.png";
-import city from "@/components/assets/HeroSection/city.png";
-import house from "@/components/assets/HeroSection/house.png";
-import busstop from "@/components/assets/HeroSection/bus-stop.png";
-import school from "@/components/assets/HeroSection/school.png";
-import mobileapp from "@/components/assets/HeroSection/screen.png";
-import schoolbus from "@/components/assets/HeroSection/schoolbus.png";
-import bigbus from "@/components/assets/HeroSection/School Bus.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white">
-      {/* TOP HERO */}
-      <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+    <section className="relative w-full bg-amber-100 overflow-hidden">
+      {/* ===================== MAIN HERO ===================== */}
+     <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-40 grid lg:grid-cols-2 gap-10 items-start">
 
-        {/* LEFT CONTENT */}
-        <div className="z-10">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
-            Smart School Transport <br />
-            Tracking for Parents & Schools
-          </h1>
-
-          <p className="mt-6 text-lg text-blue-600 max-w-xl">
+        {/* ========== LEFT CONTENT ========== */}
+        <div>
+         <h1 className="text-[38px] lg:text-[38px] font-bold leading-tight text-gray-700 whitespace-nowrap">
+  Smart School Transport <br />
+  Tracking for Parents & Schools
+</h1>
+          {/* Subtitle */}
+          <p className="mt-2 text-[24px] lg:text-[24px] text-[#1565C0] font-medium max-w-xl">
             Real-time location, pickup & drop alerts, and automatic attendance —
             all in one simple app.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
-            <button className="bg-amber-200 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl">
-              Contact Us →
-            </button>
+          {/* Buttons */}
+         <div
+  className="
+    mt-4
+    flex flex-col
+    sm:flex-row
+    lg:flex-row
+    items-center
+    gap-4 sm:gap-6 lg:gap-6
+  "
+>
+  <button className="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded-lg shadow-md transition">
+    Contact Us →
+  </button>
 
-            <div className="h-12 w-40 flex items-center">
-              <Image
-                src={playbutton}
-                alt="Google Play"
-                className="object-contain"
-              />
-            </div>
-          </div>
+  <Image
+    src={playbutton}
+    alt="Google Play"
+    className="w-[140px] sm:w-[170px] lg:w-[170px] cursor-pointer"
+  />
+</div>
+
         </div>
 
-        {/* RIGHT CONTENT */}
-        <div className="relative flex justify-center">
-          <div className="absolute w-[420px] h-[420px] bg-white rounded-full -z-10" />
+        {/* ========== RIGHT SIDE IMAGE AREA ========== */}
+        <div className="relative flex justify-center items-center">
+          
+        
 
-          <div className="relative">
-            <Image
-              src={bigbus}
-              alt="Bus Illustration"
-              className="w-[360px] h-auto"
-              priority
-            />
+          {/* Bus + Family Illustration (example placeholder) */}
+           {/* Bus + Family Illustration (example placeholder) */}
+          <Image
+            src={busStop}
+            alt="Bus Illustration"
+            className="relative z-10 w-[500px]"
+          />
 
-            <div className="absolute -right-20 top-10">
-              <Image
-                src={mobileapp}
-                alt="Mobile App"
-                className="w-[180px] h-auto"
-              />
-            </div>
-          </div>
+          {/* Mobile Phone Mock */}
+          
         </div>
       </div>
 
-      {/* BOTTOM CITY SECTION */}
-      <div className="relative bg-yellow-300 pt-24">
-        <div className="absolute inset-x-0 top-0">
-          <Image src={city} alt="City Skyline" className="w-full h-auto" />
-        </div>
+      {/* ===================== CURVE BACKGROUND ===================== */}
+      <div className="absolute bottom-0 left-0 w-full">
+        <Image
+          src={curveBg}
+          alt="Curve Background"
+          className="w-full object-cover"
+        />
+      </div>
 
-        <div className="relative max-w-7xl mx-auto flex justify-between items-end px-6">
-          <Image src={house} alt="House" className="w-[220px] h-auto" />
-          <Image src={busstop} alt="Bus Stop" className="w-[160px] h-auto" />
-          <Image src={school} alt="School" className="w-[260px] h-auto" />
-        </div>
-
-        <div className="mt-10 bg-gray-900 h-20 relative">
-          <div className="absolute inset-0 flex items-center justify-center gap-6">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="w-10 h-1 bg-white opacity-70" />
-            ))}
-          </div>
-
-          <div className="absolute right-20 -top-10">
-            <Image
-              src={schoolbus}
-              alt="School Bus"
-              className="w-[200px] h-auto"
-            />
-          </div>
-        </div>
+      {/* ===================== CITY STRIP ===================== */}
+      <div className="absolute bottom-0 left-0 w-full">
+        <Image
+          src={city}
+          alt="City Background"
+          className="w-full object-cover"
+        />
       </div>
     </section>
   );

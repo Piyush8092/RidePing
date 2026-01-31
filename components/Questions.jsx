@@ -2,7 +2,7 @@ import React from 'react'
 
 const Questions = ({data,onClick,isOpen}) => {
   return (
-  <div className='border-b border-white/25 last:border-b-0 overflow-hidden bg-amber-50'>
+  <div className='border-b border-white/25 last:border-b-0 overflow-hidden bg-white'>
     <div onClick={onClick} className='flex justify-between gap-8 items-start cursor-pointer text-xl py-4 text-black '>
       <h1 className='text-black/90 font-semibold text-2xl'>{data.question}</h1>
      <span

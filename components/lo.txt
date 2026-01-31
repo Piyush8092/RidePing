@@ -1,0 +1,345 @@
+import p1 from "@/components/assets/phones/p1.png";
+import p2 from "@/components/assets/phones/p2.png";
+import p3 from "@/components/assets/phones/p3.png";
+import p4 from "@/components/assets/phones/p4.png";
+import p5 from "@/components/assets/phones/p5.png";
+import p6 from "@/components/assets/phones/p6.png";
+import p7 from "@/components/assets/phones/p7.png";
+
+import circle from "@/components/assets/phones/circle.png";
+
+"use client";
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Bus from "@/components/assets/bus.png";
+
+export default function WhyChooseUs() {
+  const sectionRef = useRef(null);
+
+  // 🔹 Scroll tracking ONLY for this section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // 🔹 Scroll direction = movement direction
+  const busY = useTransform(scrollYProgress, [0, 1], [0, 520]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="w-full bg-[#3bb0b6] pt-10 pb-26 px-4 min-h-[100vh]"
+    >
+      {/* Heading */}
+      <div className="text-center mb-15">
+        <h2 className="text-white text-3xl md:text-4xl font-bold relative inline-block">
+          Why Choose Us
+          <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-yellow-400 rounded-full" />
+        </h2>
+      </div>
+
+      <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        {/* LEFT */}
+        <div className="flex flex-col gap-16 md:gap-20 items-center md:items-end">
+          <FeatureCard
+            title="Reliable"
+            desc="99% uptime with cloud-based tracking."
+            titleColor="text-blue-600"
+            align="right"
+          />
+          <FeatureCard
+            title="Fast"
+            desc="Live updates every few seconds."
+            titleColor="text-teal-500"
+            align="right"
+          />
+        </div>
+
+        {/* CENTER TRACK */}
+        <div className="relative flex justify-center">
+          <div className="relative w-24 h-[520px] rounded-full border-2 border-yellow-400 flex justify-center overflow-hidden">
+
+            {/* dashed line */}
+            <div
+              className="absolute top-6 bottom-6 w-[4px]
+              bg-[repeating-linear-gradient(to_bottom,white_0_12px,transparent_12px_24px)]"
+            />
+            <motion.div
+              style={{ y: busY }}
+              className="absolute top-0 z-20"
+            >
+              <Image
+                src={Bus}
+                alt="Bus"
+                width={60}
+                height={100}
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* RIGHT */}
+        <div className="flex flex-col gap-16 md:gap-20 items-center md:items-start">
+          <FeatureCard
+            title="Secure"
+            desc="Encrypted data and verified drivers."
+            titleColor="text-green-600"
+            align="left"
+          />
+          <FeatureCard
+            title="Simple"
+            desc="Drivers with zero tech knowledge can use it easily."
+            titleColor="text-red-600"
+            align="left"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeatureCard({ title, desc, titleColor, align }) {
+  return (
+    <div className="relative bg-white rounded-2xl shadow-lg p-6 w-full max-w-sm">
+      <div
+        className={`absolute top-1/2 -translate-y-1/2 ${
+          align === "right" ? "-right-6" : "-left-6"
+        }`}
+      >
+        <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-xs font-bold text-black">
+          BUS
+        </div>
+      </div>
+
+      <h3 className={`text-xl font-bold ${titleColor}`}>{title}</h3>
+      <p className="text-gray-600 mt-2 text-sm">{desc}</p>
+    </div>
+  );
+}
+**********************************
+"use client";
+
+import Image from "next/image";
+
+import playbutton from "@/components/assets/HeroSection/googleplaybutton.png";
+import city from "@/components/assets/HeroSection/city.png";
+import house from "@/components/assets/HeroSection/house.png";
+import busstop from "@/components/assets/HeroSection/bus-stop.png";
+import school from "@/components/assets/HeroSection/school.png";
+import mobileapp from "@/components/assets/HeroSection/screen.png";
+import schoolbus from "@/components/assets/HeroSection/schoolbus.png";
+import bigbus from "@/components/assets/HeroSection/School Bus.png";
+
+export default function HeroSection() {
+  return (
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* TOP HERO */}
+      <div className="relative max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+
+        {/* LEFT CONTENT */}
+        <div className="z-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+            Smart School Transport <br />
+            Tracking for Parents & Schools
+          </h1>
+
+          <p className="mt-6 text-lg text-blue-600 max-w-xl">
+            Real-time location, pickup & drop alerts, and automatic attendance —
+            all in one simple app.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl">
+              Contact Us →
+            </button>
+
+            <div className="h-12 w-40 flex items-center">
+              <Image
+                src={playbutton}
+                alt="Google Play"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT CONTENT */}
+        <div className="relative flex justify-center">
+          <div className="absolute w-[420px] h-[420px] bg-white rounded-full -z-10" />
+
+          <div className="relative">
+            <Image
+              src={bigbus}
+              alt="Bus Illustration"
+              className="w-[360px] h-auto"
+              priority
+            />
+
+            <div className="absolute -right-20 top-10">
+              <Image
+                src={mobileapp}
+                alt="Mobile App"
+                className="w-[180px] h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* BOTTOM CITY SECTION */}
+      <div className="relative bg-yellow-300 pt-24">
+        <div className="absolute inset-x-0 top-0">
+          <Image src={city} alt="City Skyline" className="w-full h-auto" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto flex justify-between items-end px-6">
+          <Image src={house} alt="House" className="w-[220px] h-auto" />
+          <Image src={busstop} alt="Bus Stop" className="w-[160px] h-auto" />
+          <Image src={school} alt="School" className="w-[260px] h-auto" />
+        </div>
+
+        <div className="mt-10 bg-gray-900 h-20 relative">
+          <div className="absolute inset-0 flex items-center justify-center gap-6">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="w-10 h-1 bg-white opacity-70" />
+            ))}
+          </div>
+
+          <div className="absolute right-20 -top-10">
+            <Image
+              src={schoolbus}
+              alt="School Bus"
+              className="w-[200px] h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+ import playbutton from "@/components/assets/HeroSection/googleplaybutton.png";
+// import city from "@/components/assets/HeroSection/city.png";
+// import house from "@/components/assets/HeroSection/house.png";
+// import busstop from "@/components/assets/HeroSection/bus-stop.png";
+// import school from "@/components/assets/HeroSection/school.png";
+// import mobileapp from "@/components/assets/HeroSection/screen.png";
+// import schoolbus from "@/components/assets/HeroSection/schoolbus.png";
+// import bigbus from "@/components/assets/HeroSection/School Bus.png";
+"use client";
+
+import Image from "next/image";
+
+import playbutton from "@/components/assets/HeroSection/googleplaybutton.png";
+import city from "@/components/assets/HeroSection/city.png";
+import house from "@/components/assets/HeroSection/house.png";
+import busstop from "@/components/assets/HeroSection/bus-stop.png";
+import school from "@/components/assets/HeroSection/school.png";
+import mobileapp from "@/components/assets/HeroSection/screen.png";
+import schoolbus from "@/components/assets/HeroSection/schoolbus.png";
+import bigbus from "@/components/assets/HeroSection/School Bus.png";
+import curveBg from "@/components/assets/HeroSection/curvebg.png";
+
+export default function HeroSection() {
+  return (
+    <section className="relative w-full overflow-hidden bg-white">
+      {/* TOP HERO */}
+      <div
+  className="
+    relative max-w-7xl mx-auto
+    px-6
+    pt-28   /* 👈 navbar height ke hisaab se */
+    pb-20
+    grid grid-cols-1 lg:grid-cols-2 items-center gap-16
+    bg-cover bg-center
+  "
+  style={{ backgroundImage: `url(${curveBg.src})` }}
+>
+
+        
+
+        {/* LEFT CONTENT */}
+        {/* <div className="z-10">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+            Smart School Transport <br />
+            Tracking for Parents & Schools
+          </h1>
+
+          <p className="mt-6 text-lg text-blue-600 max-w-xl">
+            Real-time location, pickup & drop alerts, and automatic attendance —
+            all in one simple app.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <button className="bg-amber-200 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl">
+              Contact Us →
+            </button>
+
+            <div className="h-12 w-40 flex items-center">
+              <Image
+                src={playbutton}
+                alt="Google Play"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div> */}
+
+        {/* RIGHT CONTENT */}
+        {/* <div className="relative flex justify-center">
+          <div className="absolute w-[420px] h-[420px] bg-white rounded-full -z-10" />
+
+          <div className="relative">
+            <Image
+              src=""
+              alt="Bus Illustration"
+              className="w-[360px] h-auto"
+              priority
+            />
+
+            <div className="absolute -right-20 top-10">
+              <Image
+                src=""
+                alt="Mobile App"
+                className="w-[180px] h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div> */}
+    
+
+      {/* BOTTOM CITY SECTION */}
+      {/* <div className="relative bg-yellow-300 pt-24"> */}
+        {/* <div className="absolute inset-x-0 top-0">
+          <Image src="" alt="City Skyline" className="w-full h-auto" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto flex justify-between items-end px-6">
+          <Image src="" alt="House" className="w-[220px] h-auto" />
+          <Image src="" alt="Bus Stop" className="w-[160px] h-auto" />
+          <Image src="" alt="School" className="w-[260px] h-auto" />
+        </div>
+
+        <div className="mt-10 bg-gray-900 h-20 relative">
+          <div className="absolute inset-0 flex items-center justify-center gap-6">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="w-10 h-1 bg-white opacity-70" />
+            ))}
+          </div>
+
+          <div className="absolute right-20 -top-10">
+            <Image
+              src=""
+              alt="School Bus"
+              className="w-[200px] h-auto"
+            />
+          </div>
+        </div> */}
+      </div>
+    </section>
+  );
+}

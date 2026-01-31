@@ -9,18 +9,18 @@ import playbutton from "@/components/assets/HeroSection/googleplaybutton.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full bg-amber-100 overflow-hidden">
+    <section className="relative w-full bg-amber-100 overflow-hidden min-h-screen">
       {/* ===================== MAIN HERO ===================== */}
      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-40 grid lg:grid-cols-2 gap-10 items-start">
 
         {/* ========== LEFT CONTENT ========== */}
         <div>
-         <h1 className="text-[38px] lg:text-[38px] font-bold leading-tight text-gray-700 whitespace-nowrap">
+         <h1 className="text-[38px] lg:text-[38px] font-bold leading-tight text-gray-700 text-center md:text-start">
   Smart School Transport <br />
   Tracking for Parents & Schools
 </h1>
           {/* Subtitle */}
-          <p className="mt-2 text-[24px] lg:text-[24px] text-[#1565C0] font-medium max-w-xl">
+          <p className="mt-2 text-[24px] lg:text-[24px] text-[#1565C0] font-medium  text-center md:text-start ">
             Real-time location, pickup & drop alerts, and automatic attendance —
             all in one simple app.
           </p>
@@ -29,11 +29,12 @@ export default function HeroSection() {
          <div
   className="
     mt-4
-    flex flex-col
+    flex flex-row
     sm:flex-row
     lg:flex-row
     items-center
     gap-4 sm:gap-6 lg:gap-6
+    lg:mt-2
   "
 >
   <button className="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded-lg shadow-md transition">
@@ -59,7 +60,7 @@ export default function HeroSection() {
           <Image
             src={busStop}
             alt="Bus Illustration"
-            className="relative z-10 w-[500px]"
+           className="relative z-10 object-cover w-[360px] h-[300px] xl:w-[460px] xl:h-[400px]"
           />
 
           {/* Mobile Phone Mock */}
@@ -77,7 +78,7 @@ export default function HeroSection() {
       </div>
 
       {/* ===================== CITY STRIP ===================== */}
-      <div className="absolute bottom-0 left-0 w-full">
+      <div className="absolute bottom-0 left-0 w-full ">
         <Image
           src={city}
           alt="City Background"

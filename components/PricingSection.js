@@ -42,7 +42,7 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <div className="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8 mb-6">
       {/* Section Heading */}
       <div className="relative w-full text-center mb-6  ">
         <h2 className="relative z-20 text-48 font-bold   sm:text-3xl md:text-4xl  text-white leading-none font-ibmPlexMono">
@@ -63,7 +63,7 @@ const PricingSection = () => {
 
       
       <div className="flex justify-center">
-        <div className="flex flex-col md:flex-row gap-3 lg:gap-4">
+        <div className="flex flex-col md:flex-row gap-2 sm:gap-3 lg:gap-4">
           {plans.map((plan, index) => (
             <div
               key={index}

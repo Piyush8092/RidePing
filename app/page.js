@@ -10,12 +10,10 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <AppFeatures />
       <WhyChooseUs />
       <TestimonialsSection />
-      <PricingSection />
-      <AppFeatures>
-        <HeroPhones />
-      </AppFeatures>
+      <PricingSection/>
       <FAQs />
     </>
   );

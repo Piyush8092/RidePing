@@ -58,7 +58,9 @@ const TestimonialsSection = () => {
       {/* Cards */}
       <div className="flex flex-col md:flex-row gap-6 justify-center">
         {/* First card: always visible */}
+      <div>
         <UserCard {...testimonials[0]} />
+      </div>
 
         {/* Second card: hidden on mobile */}
         <div className="  hidden md:block">

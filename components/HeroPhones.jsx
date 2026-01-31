@@ -64,7 +64,7 @@ export default function HeroPhones() {
               className="absolute top-1/2 -translate-y-1/2"
               style={{ zIndex: slot.z }}
             >
-              {/* 🔒 SIZE FIXED */}
+              
               <Image
                 src={phone}
                 alt="phone"

@@ -17,7 +17,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-[#FFC857]">
+    <nav
+      className="
+        fixed top-0 left-0 w-full
+        h-16
+        bg-[#FFC857]
+        z-50
+        shadow-md
+      "
+    >
       <div className="h-16 items-center flex justify-between">
         <div className="text-4xl text-black font-semibold px-9">
           RidePing

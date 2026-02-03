@@ -107,7 +107,7 @@ const AppFeatures = () => {
       gap-10 lg:gap-4"
     >
       {/* LEFT */}
-      <div className="flex flex-col gap-4 sm:gap-6 w-full max-w-[320px] mx-auto lg:items-end">
+      <div className="flex flex-col gap-4 sm:gap-6 w-full  relative lg:top-8 max-w-[320px] mx-auto lg:items-end">
         {leftData.map((item, i) => (
           <FeatureCard key={i} {...item} variant={variant} />
         ))}
@@ -120,7 +120,7 @@ const AppFeatures = () => {
       </div>
 
       {/* RIGHT */}
-      <div className="flex flex-col gap-4 sm:gap-6 w-full max-w-[320px] mx-auto lg:items-start">
+      <div className="flex flex-col gap-4 sm:gap-6 w-full max-w-[320px] mx-auto lg:items-start relative lg:top-8">
         {rightData.map((item, i) => (
           <FeatureCard key={i} {...item} variant={variant} />
         ))}

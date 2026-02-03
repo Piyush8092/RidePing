@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="h-16 items-center flex justify-between">
         <div className="text-4xl text-black font-semibold px-9">
-          RidePing
+          RidePing 
         </div>
 
         <div className="hidden sm:block">
@@ -36,7 +36,7 @@ const Navbar = () => {
             <a
               key={link}
               href="#"
-               className="inline-block text-gray-700 text-s px-4 font-bold border-b-2 border-transparent hover:border-red-500  hover:text-black"
+               className="inline-block text-gray-700 text-s px-4 font-bold border-b-2 border-transparent hover:border-red-500  hover:text-[#1F1F1F]"
             >
               {link}
             </a>

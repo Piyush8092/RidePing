@@ -99,7 +99,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-4 text-s">
   <p className="text-amber-50">
-    © 2026 RidePing. All rights reserved.
+    ©{new Date().getFullYear()} RidePing. All rights reserved.
   </p>
   <p className="text-amber-50">
     Designed with ❤️ by ClienZon

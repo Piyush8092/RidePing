@@ -168,3 +168,13 @@ body {
 .animate-phone-right {
   animation: phoneRight 9s infinite ease-in-out;
 }
+/* Completely hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* IE / Edge */
+}

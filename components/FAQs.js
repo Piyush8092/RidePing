@@ -20,7 +20,7 @@ const FAQs = () => {
   };
 
   return (
-   <section className="faq py-12 px-6 md:px-20 lg:px-40 bg-white text-black">
+   <section id="faqs" className="faq py-12 px-6 md:px-20 lg:px-40 bg-white text-black">
       <div className="max-w-5xl mx-auto space-y-6">
       <div className="relative w-full text-center mb-6">
       {/* Heading */}

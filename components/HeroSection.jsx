@@ -180,126 +180,117 @@ export default function HeroSection() {
       isMounted = false;
     };
   }, []);
+return (
+<section id="home" className="relative w-full min-h-screen overflow-hidden bg-white flex flex-col pt-[72px]">
 
-  return (
-    <section className="relative w-full bg-white overflow-hidden min-h-screen flex flex-col justify-between">
-      {/* ===================== MAIN HERO ===================== */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 pt-6">
-        {/* ========== LEFT CONTENT ========== */}
-        <div className="space-y-4 flex-1 z-50!">
-          <h1 className="lg:text-[48px] md:text-[40px] text-[36px] tracking-tight font-bold text-[#1F1F1F] text-center lg:text-start">
-            Smart School Transport Tracking{" "}
-            <br className="hidden sm:block 2xl:hidden" /> for Parents & Schools
+
+    {/* ===================== TOP CONTENT ===================== */}
+    <div className="relative z-20 max-w-7xl mx-auto w-full px-4 pt-10 lg:pt-20">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10">
+
+        {/* ========== TEXT BLOCK ========== */}
+        <div className="flex-1 text-center lg:text-left space-y-5">
+          <h1 className="text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px] font-bold text-[#1F1F1F] leading-tight">
+            Smart School Transport Tracking <br/>
+            for Parents & Schools
           </h1>
-          {/* Subtitle */}
-          <p className="lg:text-[32px] md:text-[24px] text-[20px] text-[#1565C0] font-medium text-center lg:text-start wrap-break-word">
-            Real-time location, pickup & drop alerts, and{" "}
-            <br className="hidden md:block lg:hidden" /> automatic attendance
-            all in one simple app.
+
+          <p className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] text-[#1565C0] font-medium max-w-2xl mx-auto lg:mx-0">
+            Real-time location, pickup & drop alerts, and automatic
+            attendance — all in one simple app.
           </p>
 
           {/* Buttons */}
-          <div className="relative flex items-center justify-center lg:justify-start">
-            <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-6 sm:w-max">
-              <button className="w-full sm:w-auto bg-[#FFC857] text-black font-semibold px-2 py-3 rounded-lg shadow-md transition max-w-54">
-                Contact Us →
-              </button>
+          <div className="flex flex-row sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <button className="bg-[#FFC857] text-black font-semibold px-6 py-3 rounded-lg shadow-md">
+              Contact Us →
+            </button>
 
-              <Image
-                src={playbutton}
-                alt="Google Play"
-                className="cursor-pointer aspect-2 object-fill h-full"
-              />
-            </div>
+            <Image
+              src={playbutton}
+              alt="Google Play"
+              className="h-[48px] w-auto"
+            />
           </div>
         </div>
 
-        {/* ========== RIGHT SIDE IMAGE AREA ========== */}
-        <div className="relative flex justify-end items-center lg:pt-4 z-50!">
-          {/* Bus + Family Illustration (example placeholder) */}
-          {/* Bus + Family Illustration (example placeholder) */}
+        {/* ========== HERO ILLUSTRATION ========== */}
+        <div className="flex-1 flex justify-center lg:justify-end">
           <Image
             src={busStop}
-            alt="Bus Illustration"
-            className="relative z-10 w-[370px] md:w-[400px] lg:w-110 xl:w-120"
-          />
-
-          {/* Mobile Phone Mock */}
-        </div>
-      </div>
-
-      {/* ===================== CURVE BACKGROUND ===================== */}
-      <div className="absolute bottom-0 left-0 w-full hidden lg:block">
-        <Image
-          src={curveBg}
-          alt="Curve Background"
-          className="w-full object-cover"
-        />
-      </div>
-      <div className="absolute bottom-0 left-0 w-full hidden md:block lg:hidden">
-        <Image
-          src={curveBgTablet}
-          alt="Curve Background"
-          className="w-full object-cover"
-        />
-      </div>
-      <div className="absolute bottom-0 left-0 w-full md:hidden">
-        <Image
-          src={curveBgMobile}
-          alt="Curve Background"
-          className="w-full object-cover"
-        />
-      </div>
-      {/* ===================== CITY STRIP ===================== */}
-      <div className="w-full relative overflow-visible">
-        <Image
-          src={city}
-          alt="City Background"
-          className="w-full object-cover z-70! relative"
-        />
-
-        {/* BUS */}
-        <motion.div
-          animate={busControls}
-          className={`z-75! absolute w-[100px] sm:w-[150px] lg:w-[250px] ${busDir === "right" ? "bottom-[3%]" : "bottom-[12%]"} z-10`}
-        >
-          <Image
-            src={busDir === "right" ? schoolbusRight : schoolbusLeft}
-            alt="School Bus"
+            alt="Hero Illustration"
+            className="
+              w-[280px]
+              sm:w-[320px]
+              md:w-[380px]
+              lg:w-[480px]
+              xl:w-[520px]
+            "
             priority
           />
-        </motion.div>
-
-        {/* PARENT */}
-        <motion.div
-          initial={{ left: "10%" }}
-          animate={parentControls}
-          className="z-70! absolute bottom-[20%] w-5 sm:w-8 md:w-10"
-        >
-          <Image
-            src={parentType === "coming" ? parentComing : parentGoing}
-            alt="Parent"
-          />
-        </motion.div>
-
-        {/* RIGHT MESSAGE */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={rightMsgControls}
-          className="absolute right-[5%] bottom-[35%] w-[100px] z-60"
-        >
-          <Image src={rightMsg1} alt="Right Message" />
-        </motion.div>
-
-        {/* LEFT MESSAGE */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={leftMsgControls}
-          className="absolute left-[1%] bottom-[35%] w-[100px] z-60"
-        >
-          <Image src={leftMsgImage} alt="Left Message" />
-        </motion.div>
+        </div>
       </div>
-    </section>
-  );
+    </div>
+
+    {/* ===================== CURVE BACKGROUND ===================== */}
+    <div className="absolute bottom-0 left-0 w-full z-10 hidden lg:block">
+      <Image src={curveBg} alt="Curve Desktop" className="w-full" />
+    </div>
+
+    <div className="absolute bottom-0 left-0 w-full z-10 hidden md:block lg:hidden">
+      <Image src={curveBgTablet} alt="Curve Tablet" className="w-full" />
+    </div>
+
+    <div className="absolute bottom-0 left-0 w-full z-10 md:hidden">
+      <Image src={curveBgMobile} alt="Curve Mobile" className="w-full" />
+    </div>
+
+    {/* ===================== CITY + ANIMATION STRIP ===================== */}
+    <div className="relative w-full z-20 mt-auto">
+      <Image src={city} alt="City" className="w-full" />
+
+      {/* BUS (animation unchanged) */}
+      <motion.div
+        animate={busControls}
+        className={`absolute ${
+          busDir === "right" ? "bottom-[3%]" : "bottom-[12%]"
+        } left-0 w-[100px] sm:w-[160px] lg:w-[240px]`}
+      >
+        <Image
+          src={busDir === "right" ? schoolbusRight : schoolbusLeft}
+          alt="Bus"
+        />
+      </motion.div>
+
+      {/* PARENT */}
+      <motion.div
+        animate={parentControls}
+        className="absolute bottom-[20%] w-[20px] sm:w-[30px] md:w-[40px]"
+      >
+        <Image
+          src={parentType === "coming" ? parentComing : parentGoing}
+          alt="Parent"
+        />
+      </motion.div>
+
+      {/* RIGHT MESSAGE */}
+      <motion.div
+        animate={rightMsgControls}
+        className="absolute right-[6%] bottom-[36%] w-[90px]"
+      >
+        <Image src={rightMsg1} alt="Right Msg" />
+      </motion.div>
+
+      {/* LEFT MESSAGE */}
+      <motion.div
+        animate={leftMsgControls}
+        className="absolute left-[2%] bottom-[36%] w-[90px]"
+      >
+        <Image src={leftMsgImage} alt="Left Msg" />
+      </motion.div>
+    </div>
+
+  </section>
+);
+
 }

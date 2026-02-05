@@ -283,7 +283,7 @@ export default function HeroSection() {
 </motion.div>
 
 
-        {/* RIGHT MESSAGE */}
+        {/* RIGHT MESSAGE  here*/}
         <motion.div
           animate={rightMsgControls}
           className="absolute right-[6%] bottom-[36%] w-[90px] z-0 md:z-20"

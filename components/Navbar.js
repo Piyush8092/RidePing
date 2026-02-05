@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import Image from "next/image";
 import Logo from "@/components/assets/logo.png"; 
+//sections for navbar
 
 const sections = [
   { id: "home", label: "Home" },

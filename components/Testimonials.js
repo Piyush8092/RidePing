@@ -49,11 +49,12 @@ const TestimonialsSection = () => {
           hidden md:flex
           absolute left-4 top-1/2 -translate-y-1/2
           z-20
-          bg-white shadow-lg
+          bg-black shadow-lg
           w-12 h-12
           items-center justify-center
           rounded-full
           hover:scale-105 transition
+          text-white
         "
       >
         <ChevronLeft />
@@ -65,11 +66,12 @@ const TestimonialsSection = () => {
           hidden md:flex
           absolute right-4 top-1/2 -translate-y-1/2
           z-20
-          bg-white shadow-lg
+          bg-black shadow-lg
           w-12 h-12
           items-center justify-center
           rounded-full
           hover:scale-105 transition
+          text-white
         "
       >
         <ChevronRight />

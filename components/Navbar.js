@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import Image from "next/image";
-import Logo from "@/components/assets/logo.png"; // <-- apna logo path
+import Logo from "@/components/assets/logo.png"; 
 
 const sections = [
   { id: "home", label: "Home" },

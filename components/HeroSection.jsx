@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
 
 import curveBg from "@/components/assets/HeroSection/curvebg.png";
 import curveBgTablet from "@/components/assets/HeroSection/curvebg-tablet.png";
@@ -20,7 +22,7 @@ import leftMsg3 from "@/components/assets/HeroSection/left-msg-3.png";
 import rightMsg1 from "@/components/assets/HeroSection/right-msg-1.png";
 
 export default function HeroSection() {
-  const busControls = useAnimation();
+ const busControls = useAnimation();
   const parentControls = useAnimation();
   const leftMsgControls = useAnimation();
   const rightMsgControls = useAnimation();
@@ -182,122 +184,119 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative w-full bg-white overflow-hidden min-h-screen flex flex-col justify-between">
-      {/* ===================== MAIN HERO ===================== */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 pt-6">
-        {/* ========== LEFT CONTENT ========== */}
-        <div className="space-y-4 flex-1 z-50!">
-          <h1 className="lg:text-[48px] md:text-[40px] text-[36px] tracking-tight font-bold text-[#1F1F1F] text-center lg:text-start">
-            Smart School Transport Tracking{" "}
-            <br className="hidden sm:block 2xl:hidden" /> for Parents & Schools
-          </h1>
-          {/* Subtitle */}
-          <p className="lg:text-[32px] md:text-[24px] text-[20px] text-[#1565C0] font-medium text-center lg:text-start wrap-break-word">
-            Real-time location, pickup & drop alerts, and{" "}
-            <br className="hidden md:block lg:hidden" /> automatic attendance
-            all in one simple app.
-          </p>
+    <section
+      id="home"
+      className="relative w-full min-h-screen overflow-hidden bg-white flex flex-col pt-[60px]"
+    >
+     <div className="relative z-20 max-w-[1400px] mx-auto w-full px-4 pt-4 lg:pt-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 xl:gap-16">
 
-          {/* Buttons */}
-          <div className="relative flex items-center justify-center lg:justify-start">
-            <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-6 sm:w-max">
-              <button className="w-full sm:w-auto bg-[#FFC857] text-black font-semibold px-2 py-3 rounded-lg shadow-md transition max-w-54">
-                Contact Us →
-              </button>
+          {/* TEXT BLOCK */}
+          <div className="flex-1 max-w-xl text-center lg:text-left space-y-5 lg:relative lg:-top-8">
+          <h1 className="text-[32px] sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px] font-bold text-[#1F1F1F] leading-tight">
+  Smart School Transport <br />
+  Tracking for Parents & Schools
+</h1>
+
+
+            <p className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] text-[#1565C0] font-medium max-w-2xl mx-auto lg:mx-0">
+              Real-time location, pickup & drop alerts, and automatic
+              attendance — all in one simple app.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-row items-center justify-center lg:justify-start gap-4 pt-4 lg:relative lg:-top-4">
+              <button className="bg-[#FFC857] text-black font-semibold px-6 py-3 rounded-lg shadow-md flex items-center gap-2 group">
+  Contact Us
+  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1 font-bold" />
+</button>
+
 
               <Image
                 src={playbutton}
                 alt="Google Play"
-                className="cursor-pointer aspect-2 object-fill h-full"
+                className="h-[48px] w-auto"
               />
             </div>
           </div>
+
+          {/* HERO IMAGE */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <Image
+              src={busStop}
+              alt="Hero Illustration"
+              className="
+                w-[280px]
+                sm:w-[320px]
+                md:w-[380px]
+                lg:w-[520px]
+                xl:w-[620px]
+                2xl:w-[680px]
+              "
+              priority
+            />
+          </div>
         </div>
-
-        {/* ========== RIGHT SIDE IMAGE AREA ========== */}
-        <div className="relative flex justify-end items-center lg:pt-4 z-50!">
-          {/* Bus + Family Illustration (example placeholder) */}
-          {/* Bus + Family Illustration (example placeholder) */}
-          <Image
-            src={busStop}
-            alt="Bus Illustration"
-            className="relative z-10 w-[370px] md:w-[400px] lg:w-110 xl:w-120"
-          />
-
-          {/* Mobile Phone Mock */}
-        </div>
       </div>
 
-      {/* ===================== CURVE BACKGROUND ===================== */}
-      <div className="absolute bottom-0 left-0 w-full hidden lg:block">
-        <Image
-          src={curveBg}
-          alt="Curve Background"
-          className="w-full object-cover"
-        />
+      {/* CURVE BACKGROUNDS */}
+      <div className="absolute bottom-0 left-0 w-full z-10 hidden lg:block">
+        <Image src={curveBg} alt="Curve Desktop" className="w-full" />
       </div>
-      <div className="absolute bottom-0 left-0 w-full hidden md:block lg:hidden">
-        <Image
-          src={curveBgTablet}
-          alt="Curve Background"
-          className="w-full object-cover"
-        />
+
+      <div className="absolute bottom-0 left-0 w-full z-10 hidden md:block lg:hidden">
+        <Image src={curveBgTablet} alt="Curve Tablet" className="w-full" />
       </div>
-      <div className="absolute bottom-0 left-0 w-full md:hidden">
-        <Image
-          src={curveBgMobile}
-          alt="Curve Background"
-          className="w-full object-cover"
-        />
+
+      <div className="absolute bottom-0 left-0 w-full z-10 md:hidden">
+        <Image src={curveBgMobile} alt="Curve Mobile" className="w-full" />
       </div>
-      {/* ===================== CITY STRIP ===================== */}
-      <div className="w-full relative overflow-visible">
-        <Image
-          src={city}
-          alt="City Background"
-          className="w-full object-cover z-70! relative"
-        />
+
+      {/* CITY + ANIMATION STRIP */}
+      <div className="relative w-full z-20 mt-auto">
+        <Image src={city} alt="City" className="w-full relative z-0" />
 
         {/* BUS */}
         <motion.div
           animate={busControls}
-          className={`z-75! absolute w-[100px] sm:w-[150px] lg:w-[250px] ${busDir === "right" ? "bottom-[3%]" : "bottom-[12%]"} z-10`}
+          className={`absolute ${
+            busDir === "right" ? "bottom-[3%]" : "bottom-[12%]"
+          } left-0 
+          w-[100px] sm:w-[160px] lg:w-[240px]
+          z-30`}
         >
           <Image
             src={busDir === "right" ? schoolbusRight : schoolbusLeft}
-            alt="School Bus"
-            priority
+            alt="Bus"
           />
         </motion.div>
 
         {/* PARENT */}
         <motion.div
-          initial={{ left: "10%" }}
-          animate={parentControls}
-          className="z-70! absolute bottom-[20%] w-5 sm:w-8 md:w-10"
-        >
-          <Image
-            src={parentType === "coming" ? parentComing : parentGoing}
-            alt="Parent"
-          />
-        </motion.div>
+  animate={parentControls}
+  className="absolute bottom-[12%] sm:bottom-[14%] md:bottom-[15%] w-[18px] sm:w-[26px] md:w-[32px] z-20"
+>
+  <Image
+    src={parentType === "coming" ? parentComing : parentGoing}
+    alt="Parent"
+  />
+</motion.div>
 
-        {/* RIGHT MESSAGE */}
+
+        {/* RIGHT MESSAGE  here*/}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={rightMsgControls}
-          className="absolute right-[5%] bottom-[35%] w-[100px] z-60"
+          className="absolute right-[6%] bottom-[36%] w-[90px] z-0 md:z-20"
         >
-          <Image src={rightMsg1} alt="Right Message" />
+          <Image src={rightMsg1} alt="Right Msg" />
         </motion.div>
 
         {/* LEFT MESSAGE */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
           animate={leftMsgControls}
-          className="absolute left-[1%] bottom-[35%] w-[100px] z-60"
+          className="absolute left-[2%] bottom-[36%] w-[90px] z-20"
         >
-          <Image src={leftMsgImage} alt="Left Message" />
+          <Image src={leftMsgImage} alt="Left Msg" />
         </motion.div>
       </div>
     </section>

@@ -42,44 +42,50 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <div className="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8">
-      {/* Section Heading */}
-      <div className="relative w-full text-center mb-6  ">
-        <h2 className="relative z-20 text-48 font-bold   sm:text-3xl md:text-4xl  text-white leading-none font-ibmPlexMono">
+    <section
+      id="plans"
+      className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
+    >
+      {/* HEADING */}
+      <div className="relative w-full text-center mb-10">
+        <h2 className="font-ibmPlexMono text-2xl sm:text-4xl md:text-5xl font-semibold text-white">
           Our Plans
         </h2>
 
-       <div className="flex justify-center -mt-1.5">
-  <Image
-    src={UnderlineImg}
-    alt="underline decoration"
-    width={190}
-    height={90}
-    className="object-contain scale-y-125 origin-center"
-    priority
-  />
-</div>
+        <div className="relative w-[280px] sm:w-[320px] h-6 mx-auto -mt-3">
+          <Image
+            src={UnderlineImg}
+            alt="underline"
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
 
-      
+      {/* CARDS */}
       <div className="flex justify-center">
-        <div className="flex flex-col md:flex-row gap-3 lg:gap-4">
+        <div
+          className="
+            grid
+            grid-cols-1
+            md:grid-cols-3
+            gap-6 md:gap-8
+            place-items-center
+            w-full
+          "
+        >
           {plans.map((plan, index) => (
-            <div
+            <MonthlyPlanCard
               key={index}
-              className="w-full md:w-[280px] lg:w-[300px]"
-            >
-              <MonthlyPlanCard
-                plan={plan.plan}
-                price={plan.price}
-                features={plan.features}
-                buttonText={plan.buttonText}
-              />
-            </div>
+              plan={plan.plan}
+              price={plan.price}
+              features={plan.features}
+              buttonText={plan.buttonText}
+            />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

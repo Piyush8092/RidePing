@@ -342,4 +342,147 @@ export default function HeroSection() {
       </div>
     </section>
   );
+} 
+
+
+
+
+"use client";
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+
+import Bus from "@/components/assets/HeroSection/bus.png";
+
+// icons (replace with your own)
+import ReliableIcon from "@/components/assets/HeroSection/reliable.png";
+import FastIcon from "@/components/assets/HeroSection/fast.png";
+import SecureIcon from "@/components/assets/HeroSection/secure.png";
+import SimpleIcon from "@/components/assets/HeroSection/simple.png";
+
+export default function WhyChooseUs() {
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // ✅ BUS MOVEMENT SAME
+  const busY = useTransform(scrollYProgress, [0.1, 1], [0, 420]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="w-full bg-[#1b1b1b] pt-14 pb-24 px-4 overflow-hidden"
+    >
+      {/* ✅ Heading */}
+      <div className="text-center mb-14">
+        <h2 className="text-white text-3xl md:text-4xl font-bold relative inline-block">
+          Why Choose Us
+          <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-yellow-400 rounded-full" />
+        </h2>
+      </div>
+
+      {/* ✅ Main Layout */}
+      <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-14 items-center">
+        
+        {/* LEFT CARDS */}
+        <div className="flex flex-col gap-16 items-center md:items-end">
+          <FeatureCard
+            title="Reliable"
+            desc="99% uptime with cloud-based tracking."
+            titleColor="text-blue-600"
+            icon={ReliableIcon}
+            align="right"
+          />
+
+          <FeatureCard
+            title="Fast"
+            desc="Live updates every few seconds."
+            titleColor="text-teal-500"
+            icon={FastIcon}
+            align="right"
+          />
+        </div>
+
+        {/* CENTER TRACK */}
+        <div className="relative flex justify-center">
+          <div className="relative w-[90px] h-[540px] rounded-full border-2 border-yellow-400 flex justify-center overflow-hidden">
+
+            {/* dashed line */}
+            <div
+              className="absolute top-6 bottom-6 w-[4px]
+              bg-[repeating-linear-gradient(to_bottom,white_0_14px,transparent_14px_28px)]"
+            />
+
+            {/* BUS */}
+            <motion.div style={{ y: busY }} className="absolute top-3 z-20">
+              <Image
+                src={Bus}
+                alt="Bus"
+                width={65}
+                height={120}
+                priority
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* RIGHT CARDS */}
+        <div className="flex flex-col gap-16 items-center md:items-start">
+          <FeatureCard
+            title="Secure"
+            desc="Encrypted data and verified drivers."
+            titleColor="text-green-600"
+            icon={SecureIcon}
+            align="left"
+          />
+
+          <FeatureCard
+            title="Simple"
+            desc="Drivers with zero tech knowledge can use it easily."
+            titleColor="text-red-600"
+            icon={SimpleIcon}
+            align="left"
+          />
+        </div>
+      </div>
+    </section>
+  );
 }
+
+/* ✅ FEATURE CARD EXACT LIKE IMAGE */
+function FeatureCard({ title, desc, titleColor, align, icon }) {
+  return (
+    <div className="relative bg-white rounded-2xl shadow-xl px-6 py-6 w-full max-w-[360px] flex items-center gap-4">
+
+      {/* LEFT ICON */}
+      <div className="w-14 h-14 flex items-center justify-center shrink-0">
+        <Image src={icon} alt={title} width={55} height={55} />
+      </div>
+
+      {/* TEXT */}
+      <div>
+        <h3 className={`text-xl font-bold ${titleColor}`}>{title}</h3>
+        <p className="text-gray-600 text-sm mt-1 leading-snug">
+          {desc}
+        </p>
+      </div>
+
+      {/* BUS CIRCLE LOGO */}
+      <div
+        className={`absolute top-1/2 -translate-y-1/2 ${
+          align === "right" ? "-right-7" : "-left-7"
+        }`}
+      >
+        <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-md border-4 border-white">
+          <span className="text-[10px] font-extrabold text-black">
+            BUS
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+

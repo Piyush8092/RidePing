@@ -10,9 +10,23 @@ const MonthlyPlanCard = ({
   topBorderColor = "border-black",
 }) => {
   return (
-    <div
-       className={`w-full md:w-72 bg-white rounded-3xl flex flex-col justify-between border-t-8 text-black ${topBorderColor} min-h-[380px]`}
-    >
+   <div
+  className={`
+    w-[280px]        /* mobile */
+    md:w-[240px]     /* tablet – perfect 3 cards */
+    lg:w-[300px]     /* desktop */
+    bg-white
+    rounded-3xl
+    flex
+    flex-col
+    justify-between
+    border-t-8
+    text-black
+    ${topBorderColor}
+    min-h-[360px]
+  `}
+>
+
       <div className="text-left px-4 pt-6">
         <h3 className="text-l font-semibold mt-2">{plan}</h3>
 

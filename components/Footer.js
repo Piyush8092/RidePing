@@ -8,7 +8,7 @@ import formIcon from "@/components/assets/iconsfooter/form.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-900 text-zinc-400 py-12 px-6 md:px-20">
+    <footer id="contact" className="bg-zinc-900 text-zinc-400 py-12 px-6 md:px-20 ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
           
@@ -99,7 +99,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-2 md:gap-4 text-s">
   <p className="text-amber-50">
-    © 2026 RidePing. All rights reserved.
+    ©{new Date().getFullYear()} RidePing. All rights reserved.
   </p>
   <p className="text-amber-50">
     Designed with ❤️ by ClienZon

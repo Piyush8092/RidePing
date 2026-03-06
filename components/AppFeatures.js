@@ -18,29 +18,27 @@ import UnderlineImg from "@/components/assets/Ellipse1.png";
 import onetap from "@/components/assets/appfeaturesIcons/onetap.png";
 import map from "@/components/assets/appfeaturesIcons/map.png";
 import locationsymbol from "@/components/assets/appfeaturesIcons/locationsymbol.png";
-import bulkaction  from "@/components/assets/appfeaturesIcons/bulkaction.png";
+import bulkaction from "@/components/assets/appfeaturesIcons/bulkaction.png";
 import realtime from "@/components/assets/appfeaturesIcons/realtime.png";
 import livestudent from "@/components/assets/appfeaturesIcons/livestudent.png";
 import endoftrip from "@/components/assets/appfeaturesIcons/endoftrip.png";
 //images of phones  (parent)
 import p1 from "@/components/assets/phones/p1.png";
- import p2 from "@/components/assets/phones/p2.png";
- import p3 from "@/components/assets/phones/p3.png";
- import p4 from "@/components/assets/phones/p4.png";
- import p5 from "@/components/assets/phones/p5.png";
- import circle from "@/components/assets/phones/circle.png";
- const phonesparent = [p1, p2, p3, p4, p5];
+import p2 from "@/components/assets/phones/p2.png";
+import p3 from "@/components/assets/phones/p3.png";
+import p4 from "@/components/assets/phones/p4.png";
+import p5 from "@/components/assets/phones/p5.png";
+import circle from "@/components/assets/phones/circle.png";
+const phonesparent = [p1, p2, p3, p4, p5];
 //driverimages
 import d1 from "@/components/assets/phones/d1.png";
- import d2 from "@/components/assets/phones/d2.png";
- import d3 from "@/components/assets/phones/d3.png";
- import d4 from "@/components/assets/phones/d4.png";
- import d5 from "@/components/assets/phones/d5.png";
- import d6 from "@/components/assets/phones/d6.png";
- import d7 from "@/components/assets/phones/d7.png";
- import d8 from "@/components/assets/phones/d8.png";
-
- 
+import d2 from "@/components/assets/phones/d2.png";
+import d3 from "@/components/assets/phones/d3.png";
+import d4 from "@/components/assets/phones/d4.png";
+import d5 from "@/components/assets/phones/d5.png";
+import d6 from "@/components/assets/phones/d6.png";
+import d7 from "@/components/assets/phones/d7.png";
+import d8 from "@/components/assets/phones/d8.png";
 
 const driverPhones = [d1, d2, d3, d4, d5];
 /* ================= PARENT FEATURES ================= */
@@ -74,8 +72,7 @@ const driverFeaturesRight = [
   { text: "Live Student List", icon: livestudent },
   { text: "End-of-Trip Confirmation", icon: endoftrip },
   { text: "Multilingual App Support", icon: languageIcon },
-   { text: "Fast, Minimal, Driver-Friendly UI", icon: uiIcon },
-  
+  { text: "Fast, Minimal, Driver-Friendly UI", icon: uiIcon },
 ];
 
 /* ================= FEATURE CARD ================= */
@@ -94,32 +91,28 @@ const FeatureCard = ({ text, icon, variant }) => {
 
   return (
     <div
-      className={`flex flex-col sm:flex-row items-center sm:items-start
-      gap-2 sm:gap-3 px-4 py-4 rounded-[20px] shadow-md w-full font-semibold
-      ${isParent
-        ? "bg-gradient-to-r from-[#00574E] to-[#009F8F] text-white border-1 border-[#FFFFFF] drop-shadow-[#333333]"
-        : "bg-gradient-to-tr from-[#1f1f1f] to-[#333333] text-white border-1 border-[#FFFFFF] drop-shadow-[#333333]"
+      className={`flex w-full flex-col items-center gap-2 rounded-[20px] px-4 py-4 font-semibold shadow-md sm:flex-row sm:items-start sm:gap-3 ${
+        isParent
+          ? "border-1 border-[#FFFFFF] bg-gradient-to-r from-[#00574E] to-[#009F8F] text-white drop-shadow-[#333333]"
+          : "border-1 border-[#FFFFFF] bg-gradient-to-tr from-[#1f1f1f] to-[#333333] text-white drop-shadow-[#333333]"
       }`}
     >
       {/* ICON */}
-      <div className="relative w-10 h-10 rounded-md shrink-0">
+      <div className="relative h-10 w-10 shrink-0 rounded-md">
         <Image src={icon} alt="" fill className="object-contain p-1" />
       </div>
 
-     <p className="text-sm leading-snug text-center sm:text-left">
-  {/* MOBILE + TABLET */}
-  <span className="block lg:hidden">
-    {first}
-    <br />
-    {last}
-  </span>
+      <p className="text-center text-sm leading-snug sm:text-left">
+        {/* MOBILE + TABLET */}
+        <span className="block lg:hidden">
+          {first}
+          <br />
+          {last}
+        </span>
 
-  {/* DESKTOP */}
-  <span className="hidden lg:inline">
-    {text}
-  </span>
-</p>
-
+        {/* DESKTOP */}
+        <span className="hidden lg:inline">{text}</span>
+      </p>
     </div>
   );
 };
@@ -127,78 +120,74 @@ const FeatureCard = ({ text, icon, variant }) => {
 /* ================= MAIN COMPONENT ================= */
 const AppFeatures = () => {
   const [mode, setMode] = useState("parent");
-const renderFeatures = (leftData, rightData, variant) => (
-  <>
-    {/* ================= MOBILE (FEATURE GRID ONLY) ================= */}
-    <div className="grid grid-cols-2 gap-4 sm:hidden">
-      {[...leftData, ...rightData].map((item, i) => (
-        <FeatureCard key={i} {...item} variant={variant} />
-      ))}
-    </div>
-
-    {/* ================= TABLET ================= */}
-    <div className="hidden sm:flex lg:hidden flex-col items-center gap-10">
-      {/* Phones */}
-      <div className="relative w-full flex justify-center min-h-[420px]">
-        {mode === "parent" && <HeroPhones images={phonesparent} />}
-        {mode === "driver" && <HeroPhones images={driverPhones} />}
-      </div>
-
-      {/* Features */}
-      <div className="grid grid-cols-2 gap-6 max-w-[700px] w-full">
+  const renderFeatures = (leftData, rightData, variant) => (
+    <>
+      {/* ================= MOBILE (FEATURE GRID ONLY) ================= */}
+      <div className="grid grid-cols-2 gap-4 sm:hidden">
         {[...leftData, ...rightData].map((item, i) => (
           <FeatureCard key={i} {...item} variant={variant} />
         ))}
       </div>
-    </div>
 
-    {/* ================= DESKTOP (EXISTING DESIGN) ================= */}
-    <div
-      className="hidden lg:grid max-w-[1500px] mx-auto 
-      grid-cols-[0.65fr_1.7fr_0.65fr] gap-6"
-    >
-      {/* LEFT */}
-      <div className="flex flex-col gap-6 items-end relative top-8">
-        {leftData.map((item, i) => (
-          <FeatureCard key={i} {...item} variant={variant} />
-        ))}
+      {/* ================= TABLET ================= */}
+      <div className="hidden flex-col items-center gap-10 sm:flex lg:hidden">
+        {/* Phones */}
+        <div className="relative flex min-h-[420px] w-full justify-center">
+          {mode === "parent" && <HeroPhones images={phonesparent} />}
+          {mode === "driver" && <HeroPhones images={driverPhones} />}
+        </div>
+
+        {/* Features */}
+        <div className="grid w-full max-w-[700px] grid-cols-2 gap-6">
+          {[...leftData, ...rightData].map((item, i) => (
+            <FeatureCard key={i} {...item} variant={variant} />
+          ))}
+        </div>
       </div>
 
-      {/* CENTER */}
-      <div className="relative flex justify-center items-center min-h-[650px] -top-8">
-        {mode === "parent" && <HeroPhones images={phonesparent} />}
-        {mode === "driver" && <HeroPhones images={driverPhones} />}
-      </div>
+      {/* ================= DESKTOP (EXISTING DESIGN) ================= */}
+      <div className="mx-auto hidden max-w-[1500px] grid-cols-[0.65fr_1.7fr_0.65fr] gap-6 lg:grid">
+        {/* LEFT */}
+        <div className="relative top-8 flex flex-col items-end gap-6">
+          {leftData.map((item, i) => (
+            <FeatureCard key={i} {...item} variant={variant} />
+          ))}
+        </div>
 
-      {/* RIGHT */}
-      <div className="flex flex-col gap-6 items-start relative top-8">
-        {rightData.map((item, i) => (
-          <FeatureCard key={i} {...item} variant={variant} />
-        ))}
-      </div>
-    </div>
-  </>
-);
+        {/* CENTER */}
+        <div className="relative -top-8 flex min-h-[650px] items-center justify-center">
+          {mode === "parent" && <HeroPhones images={phonesparent} />}
+          {mode === "driver" && <HeroPhones images={driverPhones} />}
+        </div>
 
+        {/* RIGHT */}
+        <div className="relative top-8 flex flex-col items-start gap-6">
+          {rightData.map((item, i) => (
+            <FeatureCard key={i} {...item} variant={variant} />
+          ))}
+        </div>
+      </div>
+    </>
+  );
 
   return (
-    <section id="features"className="w-full bg-white py-8 sm:py-12 px-4 overflow-hidden">
-     {/* HEADING */}
-                     <div className="relative w-full text-center mb-6">
-                       <h2 className="font-ibmPlexMono text-2xl sm:text-4xl md:text-5xl font-semibold text-black -top-6 relative">
-                        App Features
-                       </h2>
-                       <div className="relative w-[320px] h-6 mx-auto -mt-4 -top-6">
-                         <Image src={UnderlineImg} alt="underline" fill className="object-contain" />
-                       </div>
-                     </div>
+    <section id="features" className="w-full overflow-hidden bg-white px-4 py-8 sm:py-12">
+      {/* HEADING */}
+      <div className="relative mb-6 w-full text-center">
+        <h2 className="font-ibmPlexMono relative -top-6 text-2xl font-semibold text-black sm:text-4xl md:text-5xl">
+          App Features
+        </h2>
+        <div className="relative -top-6 mx-auto -mt-4 h-6 w-[320px]">
+          <Image src={UnderlineImg} alt="underline" fill className="object-contain" />
+        </div>
+      </div>
 
       {/* TOGGLE */}
-      <div className="flex justify-center mb-10 px-3">
-    <div className="flex bg-[#1F1F1F] rounded-full p-1 w-full max-w-[360px]">
+      <div className="mb-10 flex justify-center px-3">
+        <div className="flex w-full max-w-[360px] rounded-full bg-[#1F1F1F] p-1">
           <button
             onClick={() => setMode("parent")}
-            className={`flex-1 py-2 rounded-full font-bold text-lg ${
+            className={`flex-1 rounded-full py-2 text-lg font-bold ${
               mode === "parent" ? "bg-white text-black" : "text-white"
             }`}
           >
@@ -206,7 +195,7 @@ const renderFeatures = (leftData, rightData, variant) => (
           </button>
           <button
             onClick={() => setMode("driver")}
-            className={`flex-1 py-2 rounded-full font-bold text-lg ${
+            className={`flex-1 rounded-full py-2 text-lg font-bold ${
               mode === "driver" ? "bg-white text-black" : "text-white"
             }`}
           >
@@ -216,11 +205,9 @@ const renderFeatures = (leftData, rightData, variant) => (
       </div>
 
       {/* CONTENT */}
-      {mode === "parent" &&
-        renderFeatures(parentFeaturesLeft, parentFeaturesRight, "parent")}
+      {mode === "parent" && renderFeatures(parentFeaturesLeft, parentFeaturesRight, "parent")}
 
-      {mode === "driver" &&
-        renderFeatures(driverFeaturesLeft, driverFeaturesRight, "driver")}
+      {mode === "driver" && renderFeatures(driverFeaturesLeft, driverFeaturesRight, "driver")}
     </section>
   );
 };

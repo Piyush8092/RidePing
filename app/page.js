@@ -13,7 +13,7 @@ export default function HomePage() {
       <AppFeatures />
       <WhyChooseUs />
       <TestimonialsSection />
-      <PricingSection/>
+      <PricingSection />
       <FAQs />
     </>
   );

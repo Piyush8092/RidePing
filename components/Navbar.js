@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { CiMenuBurger } from "react-icons/ci";
+import { menu, X } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/components/assets/logo.png"; 
+import Logo from "@/components/assets/logo.png";
 //sections for navbar
 
 const sections = [
@@ -58,9 +58,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full h-16 bg-[#FFC857] z-[100] shadow-md">
-      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
-        
+    <nav className="fixed top-0 left-0 z-[100] h-16 w-full bg-[#FFC857] shadow-md">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* LOGO */}
         <div className="flex items-center gap-2">
           <Image src={Logo} alt="RidePing" width={36} height={36} />
@@ -68,58 +67,45 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex gap-6">
+        <div className="hidden gap-6 md:flex">
           {sections.map((sec) => (
             <button
               key={sec.id}
               onClick={() => scrollToSection(sec.id)}
-              className={`relative font-semibold text-sm transition
-                ${
-                  active === sec.id
-                    ? "text-black"
-                    : "text-gray-700 hover:text-black"
-                }
-              `}
+              className={`relative text-sm font-semibold transition ${
+                active === sec.id ? "text-black" : "text-gray-700 hover:text-black"
+              } `}
             >
               {sec.label}
 
               {/* UNDERLINE */}
               <span
-                className={`absolute left-0 -bottom-1 h-[2px] bg-red-500 transition-all duration-300
-                  ${
-                    active === sec.id
-                      ? "w-full opacity-100"
-                      : "w-0 opacity-0"
-                  }
-                `}
+                className={`absolute -bottom-1 left-0 h-[2px] bg-red-500 transition-all duration-300 ${
+                  active === sec.id ? "w-full opacity-100" : "w-0 opacity-0"
+                } `}
               />
             </button>
           ))}
         </div>
 
         {/* MOBILE TOGGLE */}
-        <button
-          className="md:hidden text-3xl"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? "✕" : <CiMenuBurger />}
+        <button className="text-3xl md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X /> : <menu />}
         </button>
       </div>
 
       {/* MOBILE MENU */}
       {isOpen && (
-       <div className="bg-[#FFC857] rounded-bl-[160px] px-10 py-6 space-y-3 shadow-lg relative -top-2">
+        <div className="relative -top-2 space-y-3 rounded-bl-[160px] bg-[#FFC857] px-10 py-6 shadow-lg">
           {sections.map((sec) => (
             <button
               key={sec.id}
               onClick={() => scrollToSection(sec.id)}
-              className={`block w-full text-right font-semibold text-lg
-                ${
-                  active === sec.id
-                    ? "underline decoration-red-500 decoration-2 underline-offset-4"
-                    : ""
-                }
-              `}
+              className={`block w-full text-right text-lg font-semibold ${
+                active === sec.id
+                  ? "underline decoration-red-500 decoration-2 underline-offset-4"
+                  : ""
+              } `}
             >
               {sec.label}
             </button>

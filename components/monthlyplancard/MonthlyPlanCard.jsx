@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { CircleCheck } from "lucide-react";
 
 const MonthlyPlanCard = ({
   plan,
@@ -10,47 +10,31 @@ const MonthlyPlanCard = ({
   topBorderColor = "border-black",
 }) => {
   return (
-   <div
-  className={`
-    w-[280px]        /* mobile */
-    md:w-[240px]     /* tablet – perfect 3 cards */
-    lg:w-[300px]     /* desktop */
-    bg-white
-    rounded-3xl
-    flex
-    flex-col
-    justify-between
-    border-t-8
-    text-black
-    ${topBorderColor}
-    min-h-[360px]
-  `}
->
+    <div
+      className={`/* mobile */ /* tablet – perfect 3 cards */ /* desktop */ flex w-[280px] flex-col justify-between rounded-3xl border-t-8 bg-white text-black md:w-[240px] lg:w-[300px] ${topBorderColor} min-h-[360px]`}
+    >
+      <div className="px-4 pt-6 text-left">
+        <h3 className="text-l mt-2 font-semibold">{plan}</h3>
 
-      <div className="text-left px-4 pt-6">
-        <h3 className="text-l font-semibold mt-2">{plan}</h3>
-
-       <p className="mt-1 text-3xl font-bold">
-  {price}
-  <span className="ml-1 text-sm relative top-1 font-normal text-gray-600">
-    /month
-  </span>
-</p>
+        <p className="mt-1 text-3xl font-bold">
+          {price}
+          <span className="relative top-1 ml-1 text-sm font-normal text-gray-600">/month</span>
+        </p>
       </div>
 
-      <hr className="border-t border-gray-200 my-2" />
+      <hr className="my-2 border-t border-gray-200" />
 
-      <ul className="px-4 space-y-2">
+      <ul className="space-y-2 px-4">
         {features.map((feature, i) => (
           <li key={i} className="flex items-center gap-2">
-            <CheckCircleIcon className="w-5 h-5 text-[#00D4BE]" />
-            <span className="text-gray-700 text-sm">{feature}</span>
+            <CircleCheck className="h-5 w-5 text-[#00D4BE]" />
+            <span className="text-sm text-gray-700">{feature}</span>
           </li>
         ))}
       </ul>
 
-      <div className="px-4 pb-4 mt-2">
-        <button className="w-full py-3 bg-[#FFC857] text-black font-semibold rounded-xl">
+      <div className="mt-2 px-4 pb-4">
+        <button className="w-full rounded-xl bg-[#FFC857] py-3 font-semibold text-black">
           {buttonText || "Get Started"}
         </button>
       </div>

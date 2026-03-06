@@ -17,7 +17,7 @@ export default function HeroPhones({ images = [] }) {
   const intervalRef = useRef(null);
 
   const rotateNext = () => {
-    setOrder(prev => {
+    setOrder((prev) => {
       const arr = [...prev];
       arr.unshift(arr.pop());
       return arr;
@@ -25,7 +25,7 @@ export default function HeroPhones({ images = [] }) {
   };
 
   const rotatePrev = () => {
-    setOrder(prev => {
+    setOrder((prev) => {
       const arr = [...prev];
       arr.push(arr.shift());
       return arr;
@@ -51,14 +51,12 @@ export default function HeroPhones({ images = [] }) {
 
   return (
     <section className="w-full">
-      <div className="relative mx-auto flex justify-center items-center h-[520px]">
-
+      <div className="relative mx-auto flex h-[520px] items-center justify-center">
         {/* LARGE BACKGROUND CIRCLE */}
         <div
-          className="absolute w-[560px] h-[560px] rounded-full z-0"
+          className="absolute z-0 h-[560px] w-[560px] rounded-full"
           style={{
-            background:
-              "radial-gradient(circle at top, #2a2a2a, #0f0f0f)",
+            background: "radial-gradient(circle at top, #2a2a2a, #0f0f0f)",
           }}
         />
 
@@ -78,33 +76,23 @@ export default function HeroPhones({ images = [] }) {
               className="absolute top-1/2 -translate-y-1/2"
               style={{ zIndex: slot.z }}
             >
-              <Image
-                src={phone}
-                alt="phone"
-                width={260}
-                height={400}
-                className="object-contain"
-              />
+              <Image src={phone} alt="phone" width={260} height={400} className="object-contain" />
             </motion.div>
           );
         })}
 
         {/* ARROWS */}
-        <div className="absolute bottom-6 flex gap-10 z-50">
+        <div className="absolute bottom-6 z-50 flex gap-10">
           <button
             onClick={() => handleManual("prev")}
-            className="w-11 h-11 rounded-full bg-black/80 text-white 
-                       flex items-center justify-center text-lg
-                       hover:bg-black transition relative top-10" 
+            className="relative top-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/80 text-lg text-white transition hover:bg-black"
           >
             ←
           </button>
 
           <button
             onClick={() => handleManual("next")}
-            className="w-11 h-11 rounded-full bg-black/80 text-white 
-                       flex items-center justify-center text-lg
-                       hover:bg-black transition relative top-10"
+            className="relative top-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/80 text-lg text-white transition hover:bg-black"
           >
             →
           </button>

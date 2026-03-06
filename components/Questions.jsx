@@ -1,22 +1,28 @@
-import React from 'react'
+import React from "react";
 
-const Questions = ({data,onClick,isOpen}) => {
+const Questions = ({ data, onClick, isOpen }) => {
   return (
-  <div className='border-b border-white/25 last:border-b-0 overflow-hidden bg-white'>
-    <div onClick={onClick} className='flex justify-between gap-8 items-start cursor-pointer text-xl py-4 text-black '>
-      <h1 className='text-black/90 font-semibold text-2xl'>{data.question}</h1>
-     <span
-  className={`text-3xl font-bold transition-transform ease-in-out duration-300 ${
-    isOpen ? "rotate-180" : ""
-  }`}
->
-  {isOpen ? "−" : "+"}
-</span>
-
+    <div className="overflow-hidden border-b border-white/25 bg-white last:border-b-0">
+      <div
+        onClick={onClick}
+        className="flex cursor-pointer items-start justify-between gap-8 py-4 text-xl text-black"
+      >
+        <h1 className="text-2xl font-semibold text-black/90">{data.question}</h1>
+        <span
+          className={`text-3xl font-bold transition-transform duration-300 ease-in-out ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        >
+          {isOpen ? "−" : "+"}
+        </span>
+      </div>
+      <p
+        className={`max-h-0 text-lg text-black opacity-90 duration-500 ease-in-out ${isOpen ? "max-h-96" : "max-h-0"}`}
+      >
+        {data.answer}
+      </p>
     </div>
-    <p className={`text-lg opacity-90 text-black max-h-0 ease-in-out duration-500 ${isOpen?"max-h-96":"max-h-0"}`}>{data.answer}</p>
-  </div>
-  )
-}
+  );
+};
 
-export default Questions
+export default Questions;

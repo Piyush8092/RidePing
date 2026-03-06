@@ -1,7 +1,8 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/providers/SmoothScroll";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,9 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} ${ibmPlexMono.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -58,7 +58,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 z-[100] h-16 w-full bg-[#FFC857] shadow-md">
+    <nav className="bg-primary fixed top-0 left-0 z-[100] h-16 w-full shadow-md">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* LOGO */}
         <div className="flex items-center gap-2">
@@ -96,7 +96,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isOpen && (
-        <div className="relative -top-2 space-y-3 rounded-bl-[160px] bg-[#FFC857] px-10 py-6 shadow-lg">
+        <div className="bg-primary relative -top-2 space-y-3 rounded-bl-[160px] px-10 py-6 shadow-lg">
           {sections.map((sec) => (
             <button
               key={sec.id}

@@ -93,8 +93,8 @@ const FeatureCard = ({ text, icon, variant }) => {
     <div
       className={`flex w-full flex-col items-center gap-2 rounded-[20px] px-4 py-4 font-semibold shadow-md sm:flex-row sm:items-start sm:gap-3 ${
         isParent
-          ? "border-1 border-[#FFFFFF] bg-gradient-to-r from-[#00574E] to-[#009F8F] text-white drop-shadow-[#333333]"
-          : "border-1 border-[#FFFFFF] bg-gradient-to-tr from-[#1f1f1f] to-[#333333] text-white drop-shadow-[#333333]"
+          ? "border-border-primary border-1 bg-gradient-to-r from-[#00574E] to-[#009F8F] text-white drop-shadow-[#333333]"
+          : "from-text-primary border-border-primary border-1 bg-gradient-to-tr to-[#333333] text-white drop-shadow-[#333333]"
       }`}
     >
       {/* ICON */}
@@ -184,7 +184,7 @@ const AppFeatures = () => {
 
       {/* TOGGLE */}
       <div className="mb-10 flex justify-center px-3">
-        <div className="flex w-full max-w-[360px] rounded-full bg-[#1F1F1F] p-1">
+        <div className="bg-text-primary flex w-full max-w-[360px] rounded-full p-1">
           <button
             onClick={() => setMode("parent")}
             className={`flex-1 rounded-full py-2 text-lg font-bold ${

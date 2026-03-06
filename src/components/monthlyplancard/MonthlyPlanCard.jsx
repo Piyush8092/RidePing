@@ -27,14 +27,14 @@ const MonthlyPlanCard = ({
       <ul className="space-y-2 px-4">
         {features.map((feature, i) => (
           <li key={i} className="flex items-center gap-2">
-            <CircleCheck className="h-5 w-5 text-[#00D4BE]" />
+            <CircleCheck className="text-info h-5 w-5" />
             <span className="text-sm text-gray-700">{feature}</span>
           </li>
         ))}
       </ul>
 
       <div className="mt-2 px-4 pb-4">
-        <button className="w-full rounded-xl bg-[#FFC857] py-3 font-semibold text-black">
+        <button className="bg-primary w-full rounded-xl py-3 font-semibold text-black">
           {buttonText || "Get Started"}
         </button>
       </div>

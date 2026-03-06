@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:grid-cols-4">
           {/* Logo */}
           <div className="col-span-1 lg:col-span-1">
-            <h2 className="mb-4 text-2xl font-semibold text-[#FFC857]">RidePing</h2>
+            <h2 className="text-primary mb-4 text-2xl font-semibold">RidePing</h2>
             <div className="w-44 cursor-pointer transition-opacity hover:opacity-90">
               <Image src={PlayBTN} alt="Get it on Google Play" priority />
             </div>
@@ -21,27 +21,27 @@ const Footer = () => {
 
           {/* Privacy Policy Links */}
           <div>
-            <h3 className="text-1xl mb-4 font-semibold tracking-wider text-[#FFC857]">
+            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">
               Privacy Policy
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-amber-50 transition hover:text-[#FFC857]">
+                <a href="#" className="hover:text-primary text-amber-50 transition">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-amber-50 transition hover:text-[#FFC857]">
+                <a href="#" className="hover:text-primary text-amber-50 transition">
                   Features
                 </a>
               </li>
               <li>
-                <a href="#" className="text-amber-50 transition hover:text-[#FFC857]">
+                <a href="#" className="hover:text-primary text-amber-50 transition">
                   Why Choose Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-amber-50 transition hover:text-[#FFC857]">
+                <a href="#" className="hover:text-primary text-amber-50 transition">
                   FAQs
                 </a>
               </li>
@@ -50,17 +50,17 @@ const Footer = () => {
 
           {/* Terms Links */}
           <div>
-            <h3 className="text-1xl mb-4 font-semibold tracking-wider text-[#FFC857]">
+            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">
               Privacy and Terms
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-amber-50 transition hover:text-[#FFC857]">
+                <a href="#" className="hover:text-primary text-amber-50 transition">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-amber-50 transition hover:text-[#FFC857]">
+                <a href="#" className="hover:text-primary text-amber-50 transition">
                   Terms & Conditions
                 </a>
               </li>
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h3 className="text-1xl mb-4 font-semibold tracking-wider text-[#FFC857]">Contact</h3>
+            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">Contact</h3>
             <ul className="space-y-4">
               <li>
                 <a href="#" className="group block">
@@ -83,7 +83,7 @@ const Footer = () => {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-sm text-amber-50 transition-colors group-hover:text-[#FFC857]">
+                    <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
                       support@rideping.com
                     </span>
                   </div>
@@ -102,7 +102,7 @@ const Footer = () => {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-sm text-amber-50 transition-colors group-hover:text-[#FFC857]">
+                    <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
                       +91 XXXXXXXX
                     </span>
                   </div>
@@ -120,7 +120,7 @@ const Footer = () => {
                       className="object-contain"
                     />
                   </div>
-                  <span className="text-sm text-amber-50 transition-colors group-hover:text-[#FFC857]">
+                  <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
                     Contact Form
                   </span>
                 </div>

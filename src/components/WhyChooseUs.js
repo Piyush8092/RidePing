@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
   });
 
   return (
-    <section id="why" ref={sectionRef} className="overflow-hidden bg-[#1F1F1F] pt-24 pb-5">
+    <section id="why" ref={sectionRef} className="bg-text-primary overflow-hidden pt-24 pb-5">
       {/* ---------- HEADING ---------- */}
       <div className="relative mb-6 w-full text-center">
         <h2 className="font-ibmPlexMono relative -top-10 z-20 mx-auto max-w-full text-2xl leading-none font-semibold text-white sm:text-4xl md:max-w-3xl md:text-5xl">
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           title="Secure"
           desc="Encrypted data and verified drivers."
           icon={SecureIcon}
-          titleColor="text-[#2E7D32]"
+          titleColor="text-success"
           variant="right"
         />
 
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
           title="Fast"
           desc="Live updates every few seconds."
           icon={FastIcon}
-          titleColor="text-[#00D4BE]"
+          titleColor="text-info"
           variant="left"
         />
 
@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
           title="Simple"
           desc="Drivers with zero tech knowledge can use it easily."
           icon={SimpleIcon}
-          titleColor="text-[#C62828]"
+          titleColor="text-error"
           variant="right"
         />
       </div>
@@ -199,7 +199,7 @@ function UniversalCard({
   const isIconRight = variant === "right";
 
   return (
-    <div className="w-full rounded-3xl bg-white px-8 py-0 shadow-xl drop-shadow-[#9A9A9A] sm:px-8 sm:py-6">
+    <div className="drop-shadow-surface w-full rounded-3xl bg-white px-8 py-0 shadow-xl sm:px-8 sm:py-6">
       <div
         className={`flex items-center justify-between gap-6 ${isIconRight ? "flex-row-reverse" : "flex-row"} `}
       >
@@ -212,7 +212,7 @@ function UniversalCard({
         <div className={`max-w-[75%] ${isIconRight ? "text-left" : "text-right"} `}>
           <h3 className={`text-3xl font-bold sm:text-xl ${titleColor} `}>{title}</h3>
 
-          <p className="mt-2 text-2xl leading-relaxed font-semibold text-[#1F1F1F] sm:text-base">
+          <p className="text-text-primary mt-2 text-2xl leading-relaxed font-semibold sm:text-base">
             {desc}
           </p>
         </div>

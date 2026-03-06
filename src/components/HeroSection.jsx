@@ -191,7 +191,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center xl:gap-16">
           {/* TEXT BLOCK */}
           <div className="max-w-xl flex-1 space-y-5 text-center lg:relative lg:-top-8 lg:text-left">
-            <h1 className="text-[32px] leading-tight font-bold text-[#1F1F1F] sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px]">
+            <h1 className="text-text-primary text-[32px] leading-tight font-bold sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px]">
               Smart School Transport <br />
               Tracking for Parents & Schools
             </h1>
@@ -203,7 +203,7 @@ export default function HeroSection() {
 
             {/* Buttons */}
             <div className="flex flex-row items-center justify-center gap-4 pt-4 lg:relative lg:-top-4 lg:justify-start">
-              <button className="group flex items-center gap-2 rounded-lg bg-[#FFC857] px-6 py-3 font-semibold text-black shadow-md">
+              <button className="group bg-primary flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-black shadow-md">
                 Contact Us
                 <ArrowRight
                   size={18}

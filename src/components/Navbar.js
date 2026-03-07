@@ -72,14 +72,14 @@ const Navbar = () => {
               key={sec.id}
               onClick={() => scrollToSection(sec.id)}
               className={`relative text-sm font-semibold transition ${
-                active === sec.id ? "text-black" : "text-gray-700 hover:text-black"
+                active === sec.id ? "text-text-primary" : "text-subtext hover:text-text-primary"
               } `}
             >
               {sec.label}
 
               {/* UNDERLINE */}
               <span
-                className={`absolute -bottom-1 left-0 h-[2px] bg-red-500 transition-all duration-300 ${
+                className={`absolute -bottom-1 left-0 h-[2px] bg-[#FF0037] transition-all duration-300 ${
                   active === sec.id ? "w-full opacity-100" : "w-0 opacity-0"
                 } `}
               />
@@ -95,20 +95,22 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isOpen && (
-        <div className="bg-primary relative -top-2 space-y-3 rounded-bl-[160px] px-10 py-6 shadow-lg">
-          {sections.map((sec) => (
-            <button
-              key={sec.id}
-              onClick={() => scrollToSection(sec.id)}
-              className={`block w-full text-right text-lg font-semibold ${
-                active === sec.id
-                  ? "underline decoration-red-500 decoration-2 underline-offset-4"
-                  : ""
-              } `}
-            >
-              {sec.label}
-            </button>
-          ))}
+        <div className="bg-primary relative -top-2 space-y-3 rounded-bl-[160px] pt-5 shadow-lg">
+          <div className="mx-6 space-y-1.5 border-t border-white py-6">
+            {sections.map((sec) => (
+              <button
+                key={sec.id}
+                onClick={() => scrollToSection(sec.id)}
+                className={`block w-full text-right text-lg font-semibold ${
+                  active === sec.id
+                    ? "underline decoration-[#FF0037] decoration-2 underline-offset-4"
+                    : ""
+                } `}
+              >
+                {sec.label}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </nav>

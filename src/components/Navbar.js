@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { menu, X } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/components/assets/logo.png";
+import Logo from "@/components/assets/logo.svg";
 //sections for navbar
 
 const sections = [
@@ -62,8 +62,7 @@ const Navbar = () => {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* LOGO */}
         <div className="flex items-center gap-2">
-          <Image src={Logo} alt="RidePing" width={36} height={36} />
-          <span className="text-2xl font-bold text-black">RidePing</span>
+          <Image src={Logo} alt="RidePing" width={163} height={51} />
         </div>
 
         {/* DESKTOP MENU */}

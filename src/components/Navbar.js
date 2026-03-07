@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Logo from "@/components/assets/logo.svg";
 //sections for navbar
@@ -89,7 +89,7 @@ const Navbar = () => {
 
         {/* MOBILE TOGGLE */}
         <button className="text-3xl md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <menu />}
+          {isOpen ? <X /> : <Menu />}
         </button>
       </div>
 

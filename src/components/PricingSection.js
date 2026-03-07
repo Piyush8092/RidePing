@@ -42,38 +42,21 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section
-      id="plans"
-      className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"
-    >
+    <section id="plans" className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* HEADING */}
-      <div className="relative w-full text-center mb-10">
-        <h2 className="font-ibmPlexMono text-2xl sm:text-4xl md:text-5xl font-semibold text-white">
+      <div className="relative mb-10 w-full text-center">
+        <h2 className="font-ibmPlexMono text-2xl font-semibold text-white sm:text-4xl md:text-5xl">
           Our Plans
         </h2>
 
-        <div className="relative w-[280px] sm:w-[320px] h-6 mx-auto -mt-3">
-          <Image
-            src={UnderlineImg}
-            alt="underline"
-            fill
-            className="object-contain"
-          />
+        <div className="relative mx-auto -mt-3 h-6 w-[280px] sm:w-[320px]">
+          <Image src={UnderlineImg} alt="underline" fill className="object-contain" />
         </div>
       </div>
 
       {/* CARDS */}
       <div className="flex justify-center">
-        <div
-          className="
-            grid
-            grid-cols-1
-            md:grid-cols-3
-            gap-6 md:gap-8
-            place-items-center
-            w-full
-          "
-        >
+        <div className="grid w-full grid-cols-1 place-items-center gap-6 md:grid-cols-3 md:gap-8">
           {plans.map((plan, index) => (
             <MonthlyPlanCard
               key={index}

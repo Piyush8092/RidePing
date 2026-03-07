@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-
 import curveBg from "@/components/assets/HeroSection/curvebg.png";
 import curveBgTablet from "@/components/assets/HeroSection/curvebg-tablet.png";
 import curveBgMobile from "@/components/assets/HeroSection/curvebg-mobile.png";
@@ -22,7 +21,7 @@ import leftMsg3 from "@/components/assets/HeroSection/left-msg-3.png";
 import rightMsg1 from "@/components/assets/HeroSection/right-msg-1.png";
 
 export default function HeroSection() {
- const busControls = useAnimation();
+  const busControls = useAnimation();
   const parentControls = useAnimation();
   const leftMsgControls = useAnimation();
   const rightMsgControls = useAnimation();
@@ -186,53 +185,42 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen overflow-hidden bg-white flex flex-col pt-[60px]"
+      className="relative flex min-h-screen w-full flex-col overflow-hidden bg-white pt-[60px]"
     >
-     <div className="relative z-20 max-w-[1400px] mx-auto w-full px-4 pt-4 lg:pt-8">
-        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 xl:gap-16">
-
+      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-4 pt-4 lg:pt-8">
+        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center xl:gap-16">
           {/* TEXT BLOCK */}
-          <div className="flex-1 max-w-xl text-center lg:text-left space-y-5 lg:relative lg:-top-8">
-          <h1 className="text-[32px] sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px] font-bold text-[#1F1F1F] leading-tight">
-  Smart School Transport <br />
-  Tracking for Parents & Schools
-</h1>
+          <div className="max-w-xl flex-1 space-y-5 text-center lg:relative lg:-top-8 lg:text-left">
+            <h1 className="text-text-primary text-[32px] leading-tight font-bold sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px]">
+              Smart School Transport <br />
+              Tracking for Parents & Schools
+            </h1>
 
-
-            <p className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] text-[#1565C0] font-medium max-w-2xl mx-auto lg:mx-0">
-              Real-time location, pickup & drop alerts, and automatic
-              attendance — all in one simple app.
+            <p className="mx-auto max-w-2xl text-[18px] font-medium text-[#1565C0] sm:text-[20px] md:text-[22px] lg:mx-0 lg:text-[24px] xl:text-[26px]">
+              Real-time location, pickup & drop alerts, and automatic attendance — all in one simple
+              app.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-row items-center justify-center lg:justify-start gap-4 pt-4 lg:relative lg:-top-4">
-              <button className="bg-[#FFC857] text-black font-semibold px-6 py-3 rounded-lg shadow-md flex items-center gap-2 group">
-  Contact Us
-  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1 font-bold" />
-</button>
+            <div className="flex flex-row items-center justify-center gap-4 pt-4 lg:relative lg:-top-4 lg:justify-start">
+              <button className="group bg-primary flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-black shadow-md">
+                Contact Us
+                <ArrowRight
+                  size={18}
+                  className="font-bold transition-transform group-hover:translate-x-1"
+                />
+              </button>
 
-
-              <Image
-                src={playbutton}
-                alt="Google Play"
-                className="h-[48px] w-auto"
-              />
+              <Image src={playbutton} alt="Google Play" className="h-[48px] w-auto" />
             </div>
           </div>
 
           {/* HERO IMAGE */}
-          <div className="flex-1 flex justify-center lg:justify-end">
+          <div className="flex flex-1 justify-center lg:justify-end">
             <Image
               src={busStop}
               alt="Hero Illustration"
-              className="
-                w-[280px]
-                sm:w-[320px]
-                md:w-[380px]
-                lg:w-[520px]
-                xl:w-[620px]
-                2xl:w-[680px]
-              "
+              className="w-[280px] sm:w-[320px] md:w-[380px] lg:w-[520px] xl:w-[620px] 2xl:w-[680px]"
               priority
             />
           </div>
@@ -240,53 +228,44 @@ export default function HeroSection() {
       </div>
 
       {/* CURVE BACKGROUNDS */}
-      <div className="absolute bottom-0 left-0 w-full z-10 hidden lg:block">
+      <div className="absolute bottom-0 left-0 z-10 hidden w-full lg:block">
         <Image src={curveBg} alt="Curve Desktop" className="w-full" />
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full z-10 hidden md:block lg:hidden">
+      <div className="absolute bottom-0 left-0 z-10 hidden w-full md:block lg:hidden">
         <Image src={curveBgTablet} alt="Curve Tablet" className="w-full" />
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full z-10 md:hidden">
+      <div className="absolute bottom-0 left-0 z-10 w-full md:hidden">
         <Image src={curveBgMobile} alt="Curve Mobile" className="w-full" />
       </div>
 
       {/* CITY + ANIMATION STRIP */}
-      <div className="relative w-full z-20 mt-auto">
-        <Image src={city} alt="City" className="w-full relative z-0" />
+      <div className="relative z-20 mt-auto w-full">
+        <Image src={city} alt="City" className="relative z-0 w-full" />
 
         {/* BUS */}
         <motion.div
           animate={busControls}
           className={`absolute ${
             busDir === "right" ? "bottom-[3%]" : "bottom-[12%]"
-          } left-0 
-          w-[100px] sm:w-[160px] lg:w-[240px]
-          z-30`}
+          } left-0 z-30 w-[100px] sm:w-[160px] lg:w-[240px]`}
         >
-          <Image
-            src={busDir === "right" ? schoolbusRight : schoolbusLeft}
-            alt="Bus"
-          />
+          <Image src={busDir === "right" ? schoolbusRight : schoolbusLeft} alt="Bus" />
         </motion.div>
 
         {/* PARENT */}
         <motion.div
-  animate={parentControls}
-  className="absolute bottom-[12%] sm:bottom-[14%] md:bottom-[15%] w-[18px] sm:w-[26px] md:w-[32px] z-20"
->
-  <Image
-    src={parentType === "coming" ? parentComing : parentGoing}
-    alt="Parent"
-  />
-</motion.div>
-
+          animate={parentControls}
+          className="absolute bottom-[12%] z-20 w-[18px] sm:bottom-[14%] sm:w-[26px] md:bottom-[15%] md:w-[32px]"
+        >
+          <Image src={parentType === "coming" ? parentComing : parentGoing} alt="Parent" />
+        </motion.div>
 
         {/* RIGHT MESSAGE  here*/}
         <motion.div
           animate={rightMsgControls}
-          className="absolute right-[6%] bottom-[36%] w-[90px] z-0 md:z-20"
+          className="absolute right-[6%] bottom-[36%] z-0 w-[90px] md:z-20"
         >
           <Image src={rightMsg1} alt="Right Msg" />
         </motion.div>
@@ -294,7 +273,7 @@ export default function HeroSection() {
         {/* LEFT MESSAGE */}
         <motion.div
           animate={leftMsgControls}
-          className="absolute left-[2%] bottom-[36%] w-[90px] z-20"
+          className="absolute bottom-[36%] left-[2%] z-20 w-[90px]"
         >
           <Image src={leftMsgImage} alt="Left Msg" />
         </motion.div>

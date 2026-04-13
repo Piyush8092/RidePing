@@ -45,7 +45,7 @@ const PricingSection = () => {
     <section id="plans" className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* HEADING */}
       <div className="relative mb-10 w-full text-center">
-        <h2 className="font-ibmPlexMono text-2xl font-semibold text-white sm:text-4xl md:text-5xl">
+        <h2 className="font-ibmPlexMono text-text-primary text-2xl font-semibold sm:text-4xl md:text-5xl">
           Our Plans
         </h2>
 

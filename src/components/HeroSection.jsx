@@ -10,7 +10,7 @@ import curveBgTablet from "@/components/assets/HeroSection/curvebg-tablet.png";
 import curveBgMobile from "@/components/assets/HeroSection/curvebg-mobile.png";
 import city from "@/components/assets/HeroSection/city1.png";
 import busStop from "@/components/assets/HeroSection/bustop.png";
-import playbutton from "@/components/assets/HeroSection/googleplaybutton.png";
+import playbutton from "@/components/assets/HeroSection/play-store-btn.png";
 import parentComing from "@/components/assets/HeroSection/parent-coming.png";
 import parentGoing from "@/components/assets/HeroSection/parent-going.png";
 import schoolbusLeft from "@/components/assets/HeroSection/schoolbus-left.png";
@@ -188,22 +188,22 @@ export default function HeroSection() {
       className="relative flex min-h-screen w-full flex-col overflow-hidden bg-white pt-[60px]"
     >
       <div className="relative z-20 mx-auto w-full max-w-[1400px] px-4 pt-4 lg:pt-8">
-        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center xl:gap-16">
+        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center xl:gap-0">
           {/* TEXT BLOCK */}
-          <div className="max-w-xl flex-1 space-y-5 text-center lg:relative lg:-top-8 lg:text-left">
+          <div className="flex-1 space-y-5 text-center lg:relative lg:-top-8 lg:text-left">
             <h1 className="text-text-primary text-[32px] leading-tight font-bold sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px]">
               Smart School Transport <br />
               Tracking for Parents & Schools
             </h1>
 
-            <p className="mx-auto max-w-2xl text-[18px] font-medium text-[#1565C0] sm:text-[20px] md:text-[22px] lg:mx-0 lg:text-[24px] xl:text-[26px]">
+            <p className="text-text-tertiary mx-auto max-w-2xl text-[18px] font-medium sm:text-[20px] md:text-[22px] lg:mx-0 lg:text-[24px] xl:text-[26px]">
               Real-time location, pickup & drop alerts, and automatic attendance — all in one simple
               app.
             </p>
 
             {/* Buttons */}
             <div className="flex flex-row items-center justify-center gap-4 pt-4 lg:relative lg:-top-4 lg:justify-start">
-              <button className="group bg-primary flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-black shadow-md">
+              <button className="group bg-primary text-subtext flex items-center gap-2 rounded-lg px-6 py-3 font-semibold shadow-md">
                 Contact Us
                 <ArrowRight
                   size={18}
@@ -257,7 +257,7 @@ export default function HeroSection() {
         {/* PARENT */}
         <motion.div
           animate={parentControls}
-          className="absolute bottom-[12%] z-20 w-[18px] sm:bottom-[14%] sm:w-[26px] md:bottom-[15%] md:w-[32px]"
+          className="absolute bottom-[12%] z-20 w-[18px] sm:bottom-[14%] sm:w-[26px] md:bottom-[16%] md:w-[32px]"
         >
           <Image src={parentType === "coming" ? parentComing : parentGoing} alt="Parent" />
         </motion.div>
@@ -265,7 +265,7 @@ export default function HeroSection() {
         {/* RIGHT MESSAGE  here*/}
         <motion.div
           animate={rightMsgControls}
-          className="absolute right-[6%] bottom-[36%] z-0 w-[90px] md:z-20"
+          className="absolute right-[6%] bottom-[36%] -z-10 w-[90px]"
         >
           <Image src={rightMsg1} alt="Right Msg" />
         </motion.div>
@@ -273,7 +273,7 @@ export default function HeroSection() {
         {/* LEFT MESSAGE */}
         <motion.div
           animate={leftMsgControls}
-          className="absolute bottom-[36%] left-[2%] z-20 w-[90px]"
+          className="absolute bottom-[36%] left-[2%] -z-10 w-[90px]"
         >
           <Image src={leftMsgImage} alt="Left Msg" />
         </motion.div>

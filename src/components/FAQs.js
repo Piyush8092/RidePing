@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Questions from "@/components/Questions.jsx";
 import UnderlineImg from "@/components/assets/Ellipse1.png";
+import SectionHeading from "./common/SectionHeading";
 
 const FAQs = () => {
   const data = [
@@ -46,22 +47,7 @@ const FAQs = () => {
   return (
     <section id="faqs" className="faq bg-white px-6 py-12 text-black md:px-20 lg:px-40">
       <div className="mx-auto max-w-5xl space-y-6">
-        <div className="relative mb-6 w-full text-center">
-          {/* Heading */}
-          <h2 className="font-monoIbm relative z-20 mx-auto max-w-full text-3xl leading-none font-bold text-black sm:text-4xl md:max-w-3xl md:text-5xl">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="relative mx-auto -mt-6 h-7 w-[96%] sm:w-95 md:w-120">
-            <Image
-              src={UnderlineImg}
-              alt="underline decoration"
-              fill
-              className="origin-bottom scale-y-125 object-contain object-bottom"
-              priority
-            />
-          </div>
-        </div>
+        <SectionHeading heading={"Frequently Asked Questions"} />
 
         <div className="mt-4 divide-y divide-gray-200">
           {data.map((d, index) => (

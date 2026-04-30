@@ -3,6 +3,7 @@
 import MonthlyPlanCard from "@/components/monthlyplancard/MonthlyPlanCard";
 import UnderlineImg from "@/components/assets/Ellipse1.png";
 import Image from "next/image";
+import SectionHeading from "./common/SectionHeading";
 
 const plans = [
   {
@@ -44,15 +45,7 @@ const PricingSection = () => {
   return (
     <section id="plans" className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* HEADING */}
-      <div className="relative mb-10 w-full text-center">
-        <h2 className="font-ibmPlexMono text-text-primary text-2xl font-semibold sm:text-4xl md:text-5xl">
-          Our Plans
-        </h2>
-
-        <div className="relative mx-auto -mt-3 h-6 w-[280px] sm:w-[320px]">
-          <Image src={UnderlineImg} alt="underline" fill className="object-contain" />
-        </div>
-      </div>
+      <SectionHeading heading={"Our Plans"} />
 
       {/* CARDS */}
       <div className="flex justify-center">

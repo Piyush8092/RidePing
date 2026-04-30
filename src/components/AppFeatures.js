@@ -39,6 +39,7 @@ import d5 from "@/components/assets/phones/d5.png";
 import d6 from "@/components/assets/phones/d6.png";
 import d7 from "@/components/assets/phones/d7.png";
 import d8 from "@/components/assets/phones/d8.png";
+import SectionHeading from "./common/SectionHeading";
 
 const driverPhones = [d1, d2, d3, d4, d5];
 /* ================= PARENT FEATURES ================= */
@@ -173,14 +174,7 @@ const AppFeatures = () => {
   return (
     <section id="features" className="w-full overflow-hidden bg-white px-4 py-8 sm:py-12">
       {/* HEADING */}
-      <div className="relative mb-6 w-full text-center">
-        <h2 className="font-ibmPlexMono relative -top-6 text-2xl font-semibold text-black sm:text-4xl md:text-5xl">
-          App Features
-        </h2>
-        <div className="relative -top-6 mx-auto -mt-4 h-6 w-[320px]">
-          <Image src={UnderlineImg} alt="underline" fill className="object-contain" />
-        </div>
-      </div>
+      <SectionHeading heading={"App Features"} />
 
       {/* TOGGLE */}
       <div className="mb-10 flex justify-center px-3">

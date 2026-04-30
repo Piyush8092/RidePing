@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import UserCard from "@/components/testimonials/UserCard";
 import UnderlineImg from "@/components/assets/Ellipse1.png";
+import SectionHeading from "./common/SectionHeading";
 
 const TestimonialsSection = () => {
   const scrollRef = useRef(null);
@@ -54,14 +55,8 @@ const TestimonialsSection = () => {
   return (
     <section id="reviews" className="relative bg-white py-16">
       {/* HEADING */}
-      <div className="relative mb-6 w-full text-center">
-        <h2 className="font-ibmPlexMono relative -top-8 text-2xl font-semibold text-black sm:text-4xl md:text-5xl">
-          What Our Users Says
-        </h2>
-        <div className="relative -top-8 mx-auto -mt-4 h-6 w-[320px]">
-          <Image src={UnderlineImg} alt="underline" fill className="object-contain" />
-        </div>
-      </div>
+      <SectionHeading heading={"What Our Users Says"} />
+
       {/* Arrows (Desktop & Tablet only) */}
       <button
         onClick={() => scrollByCard("left")}

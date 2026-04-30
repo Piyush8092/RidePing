@@ -5,6 +5,7 @@ import PlayBTN from "@/components/assets/PlayBTN.png";
 import mailIcon from "@/components/assets/iconsfooter/mail.png";
 import phoneIcon from "@/components/assets/iconsfooter/phone.png";
 import formIcon from "@/components/assets/iconsfooter/form.png";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -55,14 +56,20 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-primary text-amber-50 transition">
+                <Link
+                  href="/privacy-policy"
+                  className="hover:text-primary text-amber-50 transition"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary text-amber-50 transition">
+                <Link
+                  href="/terms-and-conditions"
+                  className="hover:text-primary text-amber-50 transition"
+                >
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -72,7 +79,7 @@ const Footer = () => {
             <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">Contact</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="group block">
+                <a href="mailto:contact@rideping.com" className="group block">
                   <div className="flex items-center gap-3">
                     <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
                       <Image
@@ -84,14 +91,14 @@ const Footer = () => {
                       />
                     </div>
                     <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
-                      support@rideping.com
+                      contact@rideping.com
                     </span>
                   </div>
                 </a>
               </li>
 
               <li>
-                <a href="#" className="group block">
+                <a href="tel:+919002831877" className="group block">
                   <div className="flex items-center gap-3">
                     <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
                       <Image
@@ -103,7 +110,7 @@ const Footer = () => {
                       />
                     </div>
                     <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
-                      +91 XXXXXXXX
+                      +91 9002831877
                     </span>
                   </div>
                 </a>

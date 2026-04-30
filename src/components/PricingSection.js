@@ -1,65 +1,108 @@
 "use client";
 
+import { useState } from "react";
 import MonthlyPlanCard from "@/components/monthlyplancard/MonthlyPlanCard";
-import UnderlineImg from "@/components/assets/Ellipse1.png";
-import Image from "next/image";
 import SectionHeading from "./common/SectionHeading";
+import WhatsAppModal from "./WhatsAppModal";
+
+const WHATSAPP_NUMBER = "919002831877";
 
 const plans = [
   {
-    plan: "Monthly Plan",
-    price: "₹799",
-    features: [
-      "Real-time tracking",
-      "Instant notifications",
-      "Automated attendance",
-      "Email Support",
-    ],
+    plan: "BASIC",
+    price: "₹20",
+    priceLabel: "/ student / month",
+    minBilling: "Min. billing: ₹5,000/month",
+    setupFee: null,
+    badge: null,
+    features: ["Attendance", "Homework", "Notices / announcements", "Basic parent app"],
     buttonText: "Get Started",
+    whatsappMessage:
+      "Hi! we are interested in the RidePing BASIC Plan (₹20/student/month). Could you share a quick demo?",
   },
   {
-    plan: "Monthly Plan",
-    price: "₹799",
+    plan: "PRO",
+    price: "₹35",
+    priceLabel: "/ student / month",
+    minBilling: "Min. billing: ₹8,000/month",
+    setupFee: null,
+    badge: "⭐ Most Popular",
+    accentColor: "border-blue-500",
     features: [
-      "Real-time tracking",
-      "Instant notifications",
-      "Automated attendance",
-      "Email Support",
+      "Everything in BASIC +",
+      "Fee management 💰",
+      "Results & report cards 📊",
+      "Teacher + admin panel",
+      "Parent notifications",
+      "Basic analytics",
     ],
     buttonText: "Get Started",
+    whatsappMessage:
+      "Hi! we are interested in the RidePing PRO Plan (₹35/student/month). Could you share a quick demo?",
   },
   {
-    plan: "Monthly Plan",
-    price: "₹799",
+    plan: "PREMIUM",
+    price: "₹50",
+    priceLabel: "/ student / month",
+    minBilling: "Min. billing: ₹10,000/month",
+    setupFee: "₹25,000 one-time setup",
+    badge: null,
     features: [
-      "Real-time tracking",
-      "Instant notifications",
-      "Automated attendance",
-      "Email Support",
+      "Everything in PRO +",
+      "Custom branding (school app name/logo)",
+      "Custom features",
+      "Priority support ⚡",
+      "Staff training + onboarding",
     ],
     buttonText: "Get Started",
+    whatsappMessage:
+      "Hi! we are interested in the RidePing PREMIUM Package (₹50/student/month + ₹25,000 one-time setup). Could you share a quick demo?",
   },
 ];
 
 const PricingSection = () => {
-  return (
-    <section id="plans" className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      {/* HEADING */}
-      <SectionHeading heading={"Our Plans"} />
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
-      {/* CARDS */}
-      <div className="flex justify-center">
-        <div className="grid w-full grid-cols-1 place-items-center gap-6 md:grid-cols-3 md:gap-8">
-          {plans.map((plan, index) => (
-            <MonthlyPlanCard
-              key={index}
-              plan={plan.plan}
-              price={plan.price}
-              features={plan.features}
-              buttonText={plan.buttonText}
-            />
-          ))}
+  const handleCardClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  return (
+    <section id="plans" className="bg-[#1F1F1F] px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        {/* HEADING */}
+        <SectionHeading heading={"Our Plans"} headingColor="text-text-secondary!" />
+
+        {/* CARDS */}
+        <div className="mt-2 flex justify-center">
+          <div className="flex flex-col justify-center gap-6 md:flex-row">
+            {plans.map((plan, index) => (
+              <MonthlyPlanCard
+                key={index}
+                plan={plan.plan}
+                subtitle={plan.subtitle}
+                price={plan.price}
+                priceLabel={plan.priceLabel}
+                minBilling={plan.minBilling}
+                setupFee={plan.setupFee}
+                badge={plan.badge}
+                accentColor={plan.accentColor}
+                features={plan.features}
+                buttonText={plan.buttonText}
+                onButtonClick={() => handleCardClick(plan)}
+              />
+            ))}
+          </div>
         </div>
+
+        <WhatsAppModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          planName={selectedPlan?.plan}
+          message={selectedPlan?.whatsappMessage}
+        />
       </div>
     </section>
   );

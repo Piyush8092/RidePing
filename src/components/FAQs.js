@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
 import Questions from "@/components/Questions.jsx";
-import UnderlineImg from "@/components/assets/Ellipse1.png";
 import SectionHeading from "./common/SectionHeading";
 
 const FAQs = () => {

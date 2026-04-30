@@ -1,50 +1,54 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
 import PlayBTN from "@/components/assets/PlayBTN.png";
 import mailIcon from "@/components/assets/iconsfooter/mail.png";
 import phoneIcon from "@/components/assets/iconsfooter/phone.png";
 import formIcon from "@/components/assets/iconsfooter/form.png";
-import Link from "next/link";
+import Logo from "@/components/assets/logo-footer.svg";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-zinc-900 px-6 py-12 text-zinc-400 md:px-20">
+    <footer id="contact" className="bg-[#1F1F1F] px-6 py-12 text-zinc-400 md:px-20">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:grid-cols-4">
           {/* Logo */}
           <div className="col-span-1 lg:col-span-1">
-            <h2 className="text-primary mb-4 text-2xl font-semibold">RidePing</h2>
-            <div className="w-44 cursor-pointer transition-opacity hover:opacity-90">
+            <Link href="/">
+              <Image src={Logo} alt="RidePing" width={163} height={51} />
+            </Link>
+            <div className="mt-6 w-44 cursor-pointer transition-opacity hover:opacity-90">
               <Image src={PlayBTN} alt="Get it on Google Play" priority />
             </div>
           </div>
 
-          {/* Privacy Policy Links */}
           <div>
-            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">
-              Privacy Policy
-            </h3>
+            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-primary text-amber-50 transition">
+                <Link href="/" className="hover:text-primary text-amber-50 transition">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary text-amber-50 transition">
-                  Features
-                </a>
+                <Link href="/#plans" className="hover:text-primary text-amber-50 transition">
+                  Plans
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary text-amber-50 transition">
-                  Why Choose Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary text-amber-50 transition">
+                <Link href="/#faqs" className="hover:text-primary text-amber-50 transition">
                   FAQs
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#features" className="hover:text-primary text-amber-50 transition">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/#why" className="hover:text-primary text-amber-50 transition">
+                  Why Choose Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -141,7 +145,14 @@ const Footer = () => {
           <p className="text-amber-50">
             ©{new Date().getFullYear()} RidePing. All rights reserved.
           </p>
-          <p className="text-amber-50">Designed with ❤️ by ClienZon</p>
+          <a
+            href="https://www.clienzon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-amber-50"
+          >
+            Designed with ❤️ by ClienZon
+          </a>
         </div>
       </div>
     </footer>

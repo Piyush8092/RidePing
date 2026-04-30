@@ -11,6 +11,7 @@ import SecureIcon from "@/components/assets/HeroSection/secure.png";
 import SimpleIcon from "@/components/assets/HeroSection/simple.png";
 import SmallBus from "@/components/assets/HeroSection/smallbus.png";
 import UnderlineImg from "@/components/assets/Ellipse1.png";
+import SectionHeading from "./common/SectionHeading";
 
 export default function WhyChooseUs() {
   const sectionRef = useRef(null);
@@ -29,21 +30,7 @@ export default function WhyChooseUs() {
   return (
     <section id="why" ref={sectionRef} className="bg-text-primary overflow-hidden pt-24 pb-5">
       {/* ---------- HEADING ---------- */}
-      <div className="relative mb-6 w-full text-center">
-        <h2 className="font-ibmPlexMono relative -top-10 z-20 mx-auto max-w-full text-2xl leading-none font-semibold text-white sm:text-4xl md:max-w-3xl md:text-5xl">
-          Why Choose Us
-        </h2>
-
-        <div className="relative -top-10 mx-auto -mt-6 h-6 w-[85%] sm:w-[320px] md:w-120">
-          <Image
-            src={UnderlineImg}
-            alt="underline decoration"
-            fill
-            className="origin-bottom scale-y-125 object-contain object-bottom"
-            priority
-          />
-        </div>
-      </div>
+      <SectionHeading heading={"Why Choose Us"} headingColor="text-text-secondary" />
 
       {/* ===================== MOBILE VIEW (EXACT IMAGE 1) ===================== */}
       <div className="relative -top-8 flex flex-col gap-5 px-5 md:hidden">

@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
-
-const WHATSAPP_NUMBER = "919002831877";
+import { siteConfig } from "@/config/site";
 
 const WhatsAppModal = ({ isOpen, onClose, planName }) => {
   const [schoolName, setSchoolName] = useState("");
@@ -46,7 +45,7 @@ const WhatsAppModal = ({ isOpen, onClose, planName }) => {
     }
 
     const fullMessage = `School: ${schoolName.trim()}\n Plan: ${planName}\n\n${message.trim()}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
+    const url = `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(fullMessage)}`;
     window.open(url, "_blank");
     onClose();
   };

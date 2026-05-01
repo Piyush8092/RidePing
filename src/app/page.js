@@ -3,7 +3,6 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import TestimonialsSection from "@/components/Testimonials";
 import PricingSection from "@/components/PricingSection";
 import AppFeatures from "@/components/AppFeatures";
-import HeroPhones from "@/components/HeroPhones";
 import FAQs from "@/components/FAQs";
 
 export default function HomePage() {

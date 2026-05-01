@@ -1,4 +1,5 @@
 import PolicyLayout from "@/components/common/PolicyLayout";
+import { siteConfig } from "@/config/site";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -73,8 +74,8 @@ export default function PrivacyPolicyPage() {
 
       <section>
         <h2 className="text-text-primary mb-2 text-xl font-semibold">9. Contact Us</h2>
-        <p>Email: contact@rideping.com</p>
-        <p>Phone: +91 9002831877</p>
+        <p>Email: {siteConfig.contact.email}</p>
+        <p>Phone: {siteConfig.contact.displayPhone}</p>
       </section>
     </PolicyLayout>
   );

@@ -1,4 +1,6 @@
 "use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PlayBTN from "@/components/assets/PlayBTN.png";
@@ -6,8 +8,12 @@ import mailIcon from "@/components/assets/iconsfooter/mail.png";
 import phoneIcon from "@/components/assets/iconsfooter/phone.png";
 import formIcon from "@/components/assets/iconsfooter/form.png";
 import Logo from "@/components/assets/logo-footer.svg";
+import ContactUsForm from "./ContactUsForm";
+import { siteConfig } from "@/config/site";
 
 const Footer = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+
   return (
     <footer id="contact" className="bg-[#1F1F1F] px-6 py-12 text-zinc-400 md:px-20">
       <div className="mx-auto max-w-7xl">
@@ -83,7 +89,7 @@ const Footer = () => {
             <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">Contact</h3>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:contact@rideping.com" className="group block">
+                <a href={`mailto:${siteConfig.contact.email}`} className="group block">
                   <div className="flex items-center gap-3">
                     <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
                       <Image
@@ -95,14 +101,14 @@ const Footer = () => {
                       />
                     </div>
                     <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
-                      contact@rideping.com
+                      {siteConfig.contact.email}
                     </span>
                   </div>
                 </a>
               </li>
 
               <li>
-                <a href="tel:+919002831877" className="group block">
+                <a href={`tel:${siteConfig.contact.phone}`} className="group block">
                   <div className="flex items-center gap-3">
                     <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
                       <Image
@@ -114,14 +120,17 @@ const Footer = () => {
                       />
                     </div>
                     <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
-                      +91 9002831877
+                      {siteConfig.contact.displayPhone}
                     </span>
                   </div>
                 </a>
               </li>
 
               <li>
-                <div className="group flex cursor-pointer items-center gap-3">
+                <div
+                  onClick={() => setShowContactForm(true)}
+                  className="group flex cursor-pointer items-center gap-3"
+                >
                   <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
                     <Image
                       src={formIcon}
@@ -155,6 +164,8 @@ const Footer = () => {
           </a>
         </div>
       </div>
+
+      {showContactForm && <ContactUsForm onClose={() => setShowContactForm(false)} />}
     </footer>
   );
 };

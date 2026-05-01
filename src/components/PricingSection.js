@@ -5,8 +5,6 @@ import MonthlyPlanCard from "@/components/monthlyplancard/MonthlyPlanCard";
 import SectionHeading from "./common/SectionHeading";
 import WhatsAppModal from "./WhatsAppModal";
 
-const WHATSAPP_NUMBER = "919002831877";
-
 const plans = [
   {
     plan: "BASIC",

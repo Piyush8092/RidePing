@@ -125,7 +125,7 @@ const WhatsAppModal = ({ isOpen, onClose, planName }) => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 py-3 text-sm font-semibold text-white transition hover:bg-green-700 active:scale-[0.98]"
+                className="bg-primary hover:bg-primary/80 text-text-primary flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition active:scale-[0.98]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

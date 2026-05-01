@@ -1,4 +1,4 @@
-const SectionHeading = ({ heading, headingColor = "text-black" }) => {
+const SectionHeading = ({ heading, headingColor = "text-text-primary" }) => {
   return (
     <div className="mb-6 flex justify-center">
       <div className="relative inline-block">

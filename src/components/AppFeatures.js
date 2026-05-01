@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import HeroPhones from "./HeroPhones";
 
@@ -14,7 +14,6 @@ import parentIcon from "@/components/assets/appfeaturesIcons/parent.png";
 import profileIcon from "@/components/assets/appfeaturesIcons/profile.png";
 import languageIcon from "@/components/assets/appfeaturesIcons/language.png";
 import uiIcon from "@/components/assets/appfeaturesIcons/ui.png";
-import UnderlineImg from "@/components/assets/Ellipse1.png";
 import onetap from "@/components/assets/appfeaturesIcons/onetap.png";
 import map from "@/components/assets/appfeaturesIcons/map.png";
 import locationsymbol from "@/components/assets/appfeaturesIcons/locationsymbol.png";
@@ -28,7 +27,6 @@ import p2 from "@/components/assets/phones/p2.png";
 import p3 from "@/components/assets/phones/p3.png";
 import p4 from "@/components/assets/phones/p4.png";
 import p5 from "@/components/assets/phones/p5.png";
-import circle from "@/components/assets/phones/circle.png";
 const phonesparent = [p1, p2, p3, p4, p5];
 //driverimages
 import d1 from "@/components/assets/phones/d1.png";
@@ -36,9 +34,6 @@ import d2 from "@/components/assets/phones/d2.png";
 import d3 from "@/components/assets/phones/d3.png";
 import d4 from "@/components/assets/phones/d4.png";
 import d5 from "@/components/assets/phones/d5.png";
-import d6 from "@/components/assets/phones/d6.png";
-import d7 from "@/components/assets/phones/d7.png";
-import d8 from "@/components/assets/phones/d8.png";
 import SectionHeading from "./common/SectionHeading";
 
 const driverPhones = [d1, d2, d3, d4, d5];

@@ -1,42 +1,41 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import UserCard from "@/components/testimonials/UserCard";
-import UnderlineImg from "@/components/assets/Ellipse1.png";
 import SectionHeading from "./common/SectionHeading";
+
+const testimonials = [
+  {
+    name: "Ganesh M. Parekh",
+    rating: 5,
+    review:
+      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+  },
+  {
+    name: "Ganesh M. Parekh",
+    rating: 5,
+    review:
+      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+  },
+  {
+    name: "Ganesh M. Parekh",
+    rating: 5,
+    review:
+      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+  },
+  {
+    name: "Ganesh M. Parekh",
+    rating: 5,
+    review:
+      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+  },
+];
 
 const TestimonialsSection = () => {
   const scrollRef = useRef(null);
 
-  const testimonials = [
-    {
-      name: "Ganesh M. Parekh",
-      rating: 5,
-      review:
-        "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
-    },
-    {
-      name: "Ganesh M. Parekh",
-      rating: 5,
-      review:
-        "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
-    },
-    {
-      name: "Ganesh M. Parekh",
-      rating: 5,
-      review:
-        "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
-    },
-    {
-      name: "Ganesh M. Parekh",
-      rating: 5,
-      review:
-        "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
-    },
-  ];
 
   const scrollByCard = (direction) => {
     if (!scrollRef.current) return;

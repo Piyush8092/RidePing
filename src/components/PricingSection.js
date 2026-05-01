@@ -5,8 +5,6 @@ import MonthlyPlanCard from "@/components/monthlyplancard/MonthlyPlanCard";
 import SectionHeading from "./common/SectionHeading";
 import WhatsAppModal from "./WhatsAppModal";
 
-const WHATSAPP_NUMBER = "919002831877";
-
 const plans = [
   {
     plan: "BASIC",
@@ -81,16 +79,7 @@ const PricingSection = () => {
             {plans.map((plan, index) => (
               <MonthlyPlanCard
                 key={index}
-                plan={plan.plan}
-                subtitle={plan.subtitle}
-                price={plan.price}
-                priceLabel={plan.priceLabel}
-                minBilling={plan.minBilling}
-                setupFee={plan.setupFee}
-                badge={plan.badge}
-                accentColor={plan.accentColor}
-                features={plan.features}
-                buttonText={plan.buttonText}
+                plan={plan}
                 onButtonClick={() => handleCardClick(plan)}
               />
             ))}

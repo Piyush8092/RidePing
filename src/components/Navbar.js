@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Logo from "@/components/assets/logo.svg";
-//sections for navbar
+import Link from "next/link";
 
 const sections = [
   { id: "home", label: "Home" },
@@ -44,33 +44,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ---------- SMOOTH SCROLL ---------- */
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    setIsOpen(false);
-
-    window.scrollTo({
-      top: el.offsetTop - 64,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <nav className="bg-primary fixed top-0 left-0 z-[100] h-16 w-full shadow-md">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* LOGO */}
-        <div className="flex items-center gap-2">
+        <Link href="/">
           <Image src={Logo} alt="RidePing" width={163} height={51} />
-        </div>
+        </Link>
 
         {/* DESKTOP MENU */}
         <div className="hidden gap-6 md:flex">
           {sections.map((sec) => (
-            <button
+            <Link
               key={sec.id}
-              onClick={() => scrollToSection(sec.id)}
+              href={`/#${sec.id}`}
               className={`relative text-sm font-semibold transition ${
                 active === sec.id ? "text-text-primary" : "text-subtext hover:text-text-primary"
               } `}
@@ -83,7 +70,7 @@ const Navbar = () => {
                   active === sec.id ? "w-full opacity-100" : "w-0 opacity-0"
                 } `}
               />
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -98,9 +85,9 @@ const Navbar = () => {
         <div className="bg-primary relative -top-2 space-y-3 rounded-bl-[160px] pt-5 shadow-lg">
           <div className="mx-6 space-y-1.5 border-t border-white py-6">
             {sections.map((sec) => (
-              <button
+              <Link
                 key={sec.id}
-                onClick={() => scrollToSection(sec.id)}
+                href={`/#${sec.id}`}
                 className={`block w-full text-right text-lg font-semibold ${
                   active === sec.id
                     ? "underline decoration-[#FF0037] decoration-2 underline-offset-4"
@@ -108,7 +95,7 @@ const Navbar = () => {
                 } `}
               >
                 {sec.label}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

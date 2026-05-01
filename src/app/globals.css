@@ -4,31 +4,40 @@
   /* Brand */
   --color-primary: #ffc857;
 
+  /* Backgrounds */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #1f1f1f;
+
   /* Text */
   --color-text-primary: #1f1f1f;
   --color-subtext: #333333;
   --color-text-secondary: #ffffff;
   --color-text-tertiary: #1565c0;
 
-  /* Informational / Optional */
   --color-info: #00d4be;
 
   /* Status */
   --color-success: #2e7d32;
   --color-error: #c62828;
-  /* --color-warning: #f97316; */
-
-  /* Neutral / Surfaces */
   --color-surface: #9a9a9a;
-  /* --color-white: #ffffff; */
-  /* --color-surface-muted: #e5e7eb; */
 
   /* Border colors */
   --color-border-primary: #ffffff;
+  --color-border-secondary: #9a9a9a;
 
   /* Font families */
   --font-sans: var(--font-inter);
   --font-mono: var(--font-ibm-plex-mono);
+}
+
+@layer components {
+  .input-field-label {
+    @apply bg-bg-secondary text-text-secondary absolute -top-3 left-2 rounded-sm px-1 py-0.5 text-xs font-medium;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border-b-4 bg-[#333333] px-4 py-3 text-base text-[#9A9A9A] placeholder-[#9A9A9A] transition outline-none;
+  }
 }
 
 /* =========================
@@ -40,6 +49,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
 }
 
 body {

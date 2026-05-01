@@ -19,6 +19,7 @@ import leftMsg1 from "@/components/assets/HeroSection/left-msg-1.png";
 import leftMsg2 from "@/components/assets/HeroSection/left-msg-2.png";
 import leftMsg3 from "@/components/assets/HeroSection/left-msg-3.png";
 import rightMsg1 from "@/components/assets/HeroSection/right-msg-1.png";
+import ContactUsForm from "./ContactUsForm";
 
 export default function HeroSection() {
   const busControls = useAnimation();
@@ -27,6 +28,7 @@ export default function HeroSection() {
   const rightMsgControls = useAnimation();
 
   const [leftMsgImage, setLeftMsgImage] = useState(leftMsg1);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const [busDir, setBusDir] = useState("right");
   const [parentType, setParentType] = useState("coming");
@@ -203,7 +205,10 @@ export default function HeroSection() {
 
             {/* Buttons */}
             <div className="flex flex-row items-center justify-center gap-4 pt-4 lg:relative lg:-top-4 lg:justify-start">
-              <button className="group bg-primary text-subtext flex items-center gap-2 rounded-lg px-6 py-3 font-semibold shadow-md">
+              <button
+                onClick={() => setShowContactForm(true)}
+                className="group bg-primary text-subtext flex items-center gap-2 rounded-lg px-6 py-3 font-semibold shadow-md"
+              >
                 Contact Us
                 <ArrowRight
                   size={18}
@@ -278,6 +283,7 @@ export default function HeroSection() {
           <Image src={leftMsgImage} alt="Left Msg" />
         </motion.div>
       </div>
+      {showContactForm && <ContactUsForm onClose={() => setShowContactForm(false)} />}
     </section>
   );
 }

@@ -3,10 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Form, Mail, Phone } from "lucide-react";
 import PlayBTN from "@/components/assets/PlayBTN.png";
-import mailIcon from "@/components/assets/iconsfooter/mail.png";
-import phoneIcon from "@/components/assets/iconsfooter/phone.png";
-import formIcon from "@/components/assets/iconsfooter/form.png";
 import Logo from "@/components/assets/logo-footer.svg";
 import ContactUsForm from "./ContactUsForm";
 import { siteConfig } from "@/config/site";
@@ -29,7 +27,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">Company</h3>
+            <h3 className="text-primary mb-4 text-xl font-semibold tracking-wider">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:text-primary text-amber-50 transition">
@@ -61,7 +59,7 @@ const Footer = () => {
 
           {/* Terms Links */}
           <div>
-            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">
+            <h3 className="text-primary mb-4 text-xl font-semibold tracking-wider">
               Privacy and Terms
             </h3>
             <ul className="space-y-2 text-sm">
@@ -78,7 +76,7 @@ const Footer = () => {
                   href="/terms-and-conditions"
                   className="hover:text-primary text-amber-50 transition"
                 >
-                  Terms & Conditions
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -86,20 +84,12 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h3 className="text-1xl text-primary mb-4 font-semibold tracking-wider">Contact</h3>
+            <h3 className="text-primary mb-4 text-xl font-semibold tracking-wider">Contact</h3>
             <ul className="space-y-4">
               <li>
                 <a href={`mailto:${siteConfig.contact.email}`} className="group block">
                   <div className="flex items-center gap-3">
-                    <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
-                      <Image
-                        src={mailIcon}
-                        alt="Email"
-                        width={24}
-                        height={24}
-                        className="object-contain"
-                      />
-                    </div>
+                    <Mail size={18} className="group-hover:text-primary" />
                     <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
                       {siteConfig.contact.email}
                     </span>
@@ -110,15 +100,7 @@ const Footer = () => {
               <li>
                 <a href={`tel:${siteConfig.contact.phone}`} className="group block">
                   <div className="flex items-center gap-3">
-                    <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
-                      <Image
-                        src={phoneIcon}
-                        alt="Phone"
-                        width={24}
-                        height={24}
-                        className="object-contain"
-                      />
-                    </div>
+                    <Phone size={18} className="group-hover:text-primary" />
                     <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
                       {siteConfig.contact.displayPhone}
                     </span>
@@ -131,15 +113,7 @@ const Footer = () => {
                   onClick={() => setShowContactForm(true)}
                   className="group flex cursor-pointer items-center gap-3"
                 >
-                  <div className="relative h-6 w-6 shrink-0 transition-transform group-hover:scale-110">
-                    <Image
-                      src={formIcon}
-                      alt="Form"
-                      width={24}
-                      height={24}
-                      className="object-contain"
-                    />
-                  </div>
+                  <Form size={18} className="group-hover:text-primary" />
                   <span className="group-hover:text-primary text-sm text-amber-50 transition-colors">
                     Contact Form
                   </span>
@@ -150,7 +124,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="text-s mt-12 flex flex-col items-start justify-between gap-2 border-t border-zinc-800 pt-8 md:flex-row md:items-center md:gap-4">
+        <div className="mt-12 flex flex-col items-start justify-between gap-2 border-t border-zinc-800 pt-8 text-sm md:flex-row md:items-center md:gap-4">
           <p className="text-amber-50">
             ©{new Date().getFullYear()} RidePing. All rights reserved.
           </p>
@@ -160,7 +134,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-amber-50"
           >
-            Designed with ❤️ by ClienZon
+            A product by ClienZon
           </a>
         </div>
       </div>

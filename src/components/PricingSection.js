@@ -79,16 +79,7 @@ const PricingSection = () => {
             {plans.map((plan, index) => (
               <MonthlyPlanCard
                 key={index}
-                plan={plan.plan}
-                subtitle={plan.subtitle}
-                price={plan.price}
-                priceLabel={plan.priceLabel}
-                minBilling={plan.minBilling}
-                setupFee={plan.setupFee}
-                badge={plan.badge}
-                accentColor={plan.accentColor}
-                features={plan.features}
-                buttonText={plan.buttonText}
+                plan={plan}
                 onButtonClick={() => handleCardClick(plan)}
               />
             ))}

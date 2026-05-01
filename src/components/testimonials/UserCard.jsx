@@ -1,12 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import { Star } from "lucide-react";
 import userProfile from "@/components/assets/userProfile.png";
 
 const UserCard = ({ name, rating, review }) => {
   return (
-    <div className="max-w-90 shrink-0 rounded-3xl border-t-8 border-black bg-white p-5 text-center shadow-md">
+    <div className="border-border-secondary max-w-90 shrink-0 rounded-3xl border-t-8 bg-white p-5 text-center shadow-md">
       {/* Profile Image */}
       <div className="mx-auto h-16 w-16 overflow-hidden rounded-full bg-gray-200">
         <Image src={userProfile} alt={name} width={64} height={64} className="object-cover" />

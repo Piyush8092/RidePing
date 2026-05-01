@@ -14,18 +14,12 @@
   --color-text-secondary: #ffffff;
   --color-text-tertiary: #1565c0;
 
-  /* Informational / Optional */
   --color-info: #00d4be;
 
   /* Status */
   --color-success: #2e7d32;
   --color-error: #c62828;
-  /* --color-warning: #f97316; */
-
-  /* Neutral / Surfaces */
   --color-surface: #9a9a9a;
-  /* --color-white: #ffffff; */
-  /* --color-surface-muted: #e5e7eb; */
 
   /* Border colors */
   --color-border-primary: #ffffff;

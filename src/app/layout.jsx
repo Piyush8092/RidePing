@@ -29,6 +29,27 @@ export const metadata = {
     "school app for parents",
     "fee management system school",
     "school administration software",
+    "School ERP India",
+    "school management software",
+    "ERP for schools",
+    "student management",
+    "admission module",
+    "fee module",
+    "timetable management",
+    "library management",
+    "school ERP system",
+    "best ERP software for schools",
+    "school ERP software Rajasthan",
+    "school ERP software Gujarat",
+    "school ERP software Maharashtra",
+    "school ERP software Uttar Pradesh",
+    "school ERP software Tamil Nadu",
+    "school ERP software Karnataka",
+    "school ERP software West Bengal",
+    "school ERP software Andhra Pradesh",
+    "school ERP software Telangana",
+    "school ERP software Haryana",
+    "school ERP software Punjab",
   ],
 
   openGraph: {
@@ -47,15 +68,28 @@ export const metadata = {
     locale: "en_IN",
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "RidePing - School ERP Software for Indian Schools",
+    description: "Manage attendance, fees, exams, transport, and communication in one platform.",
+    images: ["/logo.png"],
+    creator: "@rideping",
+    site: "@rideping",
+  },
+
+  alternates: {
+    canonical: "https://rideping.com",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body className={`${inter.variable} ${ibmPlexMono.variable}`}>
         <SmoothScroll>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

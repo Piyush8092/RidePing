@@ -25,7 +25,7 @@ const plans = [
     minBilling: "Min. billing: ₹8,000/month",
     setupFee: null,
     badge: "⭐ Most Popular",
-    accentColor: "border-blue-500",
+    accentColor: "border-blue-800",
     features: [
       "Everything in BASIC +",
       "Fee management 💰",

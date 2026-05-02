@@ -49,7 +49,7 @@ const Navbar = () => {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         {/* LOGO */}
         <Link href="/">
-          <Image src={Logo} alt="RidePing" width={163} height={51} />
+          <Image src={Logo} alt="RidePing logo click to go home" width={163} height={51} />
         </Link>
 
         {/* DESKTOP MENU */}
@@ -75,7 +75,12 @@ const Navbar = () => {
         </div>
 
         {/* MOBILE TOGGLE */}
-        <button className="text-3xl md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          type="button"
+          aria-label="toggle menu"
+          className="text-3xl md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>

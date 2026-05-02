@@ -16,27 +16,27 @@ const content = {
     {
       title: "Save Hours of Manual Work",
       desc: "Automate attendance, fees, and reports so your staff spends less time on paperwork and more on students.",
-      titleColor: "text-blue-600",
+      titleColor: "text-blue-700",
     },
     {
       title: "All-in-One School Management",
       desc: "Manage attendance, fees, results, transport, and communication from a single platform. No more juggling multiple systems.",
-      titleColor: "text-green-600",
+      titleColor: "text-green-700",
     },
     {
       title: "Better Parent Communication",
       desc: "Instant updates for attendance, homework, fees, and announcements keep parents informed and engaged.",
-      titleColor: "text-teal-500",
+      titleColor: "text-teal-700",
     },
     {
       title: "Easy for Teachers & Staff",
       desc: "Simple interface designed for non-technical users. Your team can start using it from day one.",
-      titleColor: "text-red-600",
+      titleColor: "text-red-700",
     },
     {
       title: "Quick Setup & Support",
       desc: "Get started in days with onboarding support and training for your staff. We guide you at every step.",
-      titleColor: "text-yellow-600",
+      titleColor: "text-yellow-800",
     },
   ],
 };
@@ -165,7 +165,13 @@ function Road({ scrollYProgress, isTablet = false }) {
 
         {/* bus */}
         <motion.div style={{ y: busY }} className="relative">
-          <Image src={Bus} alt="Bus" className="h-[120px] w-[150px]" />
+          <Image
+            src={Bus}
+            alt="Bus image"
+            width={360}
+            height={360}
+            className="h-auto w-[150px] object-contain"
+          />
         </motion.div>
       </div>
     </div>

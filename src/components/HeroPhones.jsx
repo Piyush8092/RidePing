@@ -76,7 +76,13 @@ export default function HeroPhones({ images = [] }) {
               className="absolute top-1/2 -translate-y-1/2"
               style={{ zIndex: slot.z }}
             >
-              <Image src={phone} alt="phone" width={260} height={400} className="object-contain" />
+              <Image
+                src={phone}
+                alt="phone image where you can see the app screenshot"
+                width={260}
+                height={400}
+                className="object-contain"
+              />
             </motion.div>
           );
         })}
@@ -84,6 +90,7 @@ export default function HeroPhones({ images = [] }) {
         {/* ARROWS */}
         <div className="absolute bottom-6 z-50 flex gap-10">
           <button
+            aria-label="Previous slide"
             onClick={() => handleManual("prev")}
             className="relative top-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/80 text-lg text-white transition hover:bg-black"
           >
@@ -91,6 +98,7 @@ export default function HeroPhones({ images = [] }) {
           </button>
 
           <button
+            aria-label="Next slide"
             onClick={() => handleManual("next")}
             className="relative top-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/80 text-lg text-white transition hover:bg-black"
           >

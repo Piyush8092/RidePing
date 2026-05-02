@@ -8,34 +8,45 @@ import SectionHeading from "./common/SectionHeading";
 
 const testimonials = [
   {
-    name: "Ganesh M. Parekh",
+    name: "Rajesh Sharma",
+    role: "Principal, Saraswati Public School",
     rating: 5,
     review:
-      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+      "Managing attendance and communication has become much easier. Parents now get instant updates and our staff saves a lot of time every day.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1597570889212-97f48e632dad?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Ganesh M. Parekh",
+    name: "Neha Verma",
+    role: "School Administrator",
     rating: 5,
     review:
-      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+      "Fee tracking and reporting is now completely organized. We can quickly see pending dues and send reminders to parents.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Ganesh M. Parekh",
+    name: "Amit Yadav",
+    role: "Senior Teacher",
     rating: 5,
     review:
-      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+      "Marking attendance and sharing homework has become very simple. The system is fast and easy for daily use.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Ganesh M. Parekh",
+    name: "Suresh Meena",
+    role: "Transport Manager",
     rating: 5,
     review:
-      "This app is very easy to use. Automated attendance saves me so much time every morning. Great system.",
+      "Live bus tracking and pickup alerts have improved student safety and reduced confusion during routes.",
+    imageUrl:
+      "https://images.unsplash.com/photo-1764169689207-e23fb66e1fcf?auto=format&fit=crop&w=400&q=80",
   },
 ];
 
 const TestimonialsSection = () => {
   const scrollRef = useRef(null);
-
 
   const scrollByCard = (direction) => {
     if (!scrollRef.current) return;
@@ -58,6 +69,7 @@ const TestimonialsSection = () => {
 
       {/* Arrows (Desktop & Tablet only) */}
       <button
+        aria-label="Previous testimonial"
         onClick={() => scrollByCard("left")}
         className="absolute top-1/2 left-4 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white shadow-lg transition hover:scale-105 md:flex"
       >
@@ -65,6 +77,7 @@ const TestimonialsSection = () => {
       </button>
 
       <button
+        aria-label="Next testimonial"
         onClick={() => scrollByCard("right")}
         className="absolute top-1/2 right-4 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black text-white shadow-lg transition hover:scale-105 md:flex"
       >
@@ -74,7 +87,7 @@ const TestimonialsSection = () => {
       {/* Scroll Container  here*/}
       <div
         ref={scrollRef}
-        className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-4 md:px-16"
+        className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-4 py-2 md:px-16"
       >
         {testimonials.map((item, i) => (
           <div key={i} className="w-full shrink-0 snap-center md:w-1/3">

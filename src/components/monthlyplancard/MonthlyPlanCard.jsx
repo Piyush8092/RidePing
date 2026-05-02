@@ -8,7 +8,7 @@ const MonthlyPlanCard = ({ plan, onButtonClick }) => {
       {/* Recommended Badge */}
       {plan.badge && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <span className="rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold whitespace-nowrap text-white shadow">
+          <span className="rounded-full bg-blue-800 px-3 py-1 text-xs font-semibold whitespace-nowrap text-white shadow">
             {plan.badge}
           </span>
         </div>
@@ -36,9 +36,10 @@ const MonthlyPlanCard = ({ plan, onButtonClick }) => {
 
       <hr className="my-3 border-t border-gray-200" />
 
+      <p className="text-text-primary mb-2 px-4 text-sm font-medium">What&apos;s included:</p>
+
       {/* Features */}
       <ul className="flex-1 space-y-2 px-5 pb-2">
-        <p className="text-text-primary mb-2 text-sm font-medium">What&apos;s included:</p>
         {plan.features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2">
             <CircleCheck className="fill-info mt-0.5 h-5 w-5 shrink-0 text-white" />

@@ -19,15 +19,15 @@ const Footer = () => {
           {/* Logo */}
           <div className="col-span-1 lg:col-span-1">
             <Link href="/">
-              <Image src={Logo} alt="RidePing" width={163} height={51} />
+              <Image src={Logo} alt="RidePing Logo" width={163} height={51} />
             </Link>
             <div className="mt-6 w-44 cursor-pointer transition-opacity hover:opacity-90">
-              <Image src={PlayBTN} alt="Get it on Google Play" priority />
+              <Image src={PlayBTN} alt="Get it on Google Play Button" priority />
             </div>
           </div>
 
           <div>
-            <h3 className="text-primary mb-4 text-xl font-semibold tracking-wider">Company</h3>
+            <h4 className="text-primary mb-4 text-xl font-semibold tracking-wider">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:text-primary text-amber-50 transition">
@@ -59,9 +59,9 @@ const Footer = () => {
 
           {/* Terms Links */}
           <div>
-            <h3 className="text-primary mb-4 text-xl font-semibold tracking-wider">
+            <h4 className="text-primary mb-4 text-xl font-semibold tracking-wider">
               Privacy and Terms
-            </h3>
+            </h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -84,7 +84,7 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h3 className="text-primary mb-4 text-xl font-semibold tracking-wider">Contact</h3>
+            <h4 className="text-primary mb-4 text-xl font-semibold tracking-wider">Contact</h4>
             <ul className="space-y-4">
               <li>
                 <a href={`mailto:${siteConfig.contact.email}`} className="group block">

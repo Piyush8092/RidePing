@@ -69,7 +69,11 @@ const WhatsAppModal = ({ isOpen, onClose, planName }) => {
             className="border-border-secondary bg-bg-secondary relative w-full max-w-2xl rounded-4xl border p-5 shadow-2xl"
           >
             {/* Close Button */}
-            <button onClick={handleClose} className="text-text-secondary absolute top-4 right-4">
+            <button
+              aria-label="Close modal"
+              onClick={handleClose}
+              className="text-text-secondary absolute top-4 right-4 z-20"
+            >
               <CircleX size={26} />
             </button>
 

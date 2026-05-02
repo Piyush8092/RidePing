@@ -189,18 +189,17 @@ export default function HeroSection() {
       id="home"
       className="relative flex min-h-screen w-full flex-col overflow-hidden bg-white pt-[60px]"
     >
-      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-4 pt-4 lg:pt-8">
+      <div className="relative z-20 mx-auto w-full max-w-[1400px] px-2 pt-4 sm:px-4 lg:pt-8">
         <div className="flex flex-col items-center justify-between gap-10 lg:flex-row lg:items-center xl:gap-0">
           {/* TEXT BLOCK */}
           <div className="flex-1 space-y-5 text-center lg:relative lg:-top-8 lg:text-left">
             <h1 className="text-text-primary text-[32px] leading-tight font-bold sm:text-[36px] md:text-[40px] lg:text-[38px] xl:text-[46px]">
-              Smart School Transport <br />
-              Tracking for Parents & Schools
+              The All-in-One School Management System
             </h1>
 
             <p className="text-text-tertiary mx-auto max-w-2xl text-[18px] font-medium sm:text-[20px] md:text-[22px] lg:mx-0 lg:text-[24px] xl:text-[26px]">
-              Real-time location, pickup & drop alerts, and automatic attendance — all in one simple
-              app.
+              From automated fee reminders to live transport tracking, empower your teachers and
+              keep parents instantly informed with RidePing&apos;s unified dashboard.
             </p>
 
             {/* Buttons */}
@@ -209,14 +208,14 @@ export default function HeroSection() {
                 onClick={() => setShowContactForm(true)}
                 className="group bg-primary text-subtext flex items-center gap-2 rounded-lg px-6 py-3 font-semibold shadow-md"
               >
-                Contact Us
+                Get Free Demo
                 <ArrowRight
                   size={18}
                   className="font-bold transition-transform group-hover:translate-x-1"
                 />
               </button>
 
-              <Image src={playbutton} alt="Google Play" className="h-[48px] w-auto" />
+              <Image src={playbutton} alt="Google Play Button" className="h-[48px] w-auto" />
             </div>
           </div>
 
@@ -224,7 +223,7 @@ export default function HeroSection() {
           <div className="flex flex-1 justify-center lg:justify-end">
             <Image
               src={busStop}
-              alt="Hero Illustration"
+              alt="Hero Illustration Bus Stop"
               className="w-[280px] sm:w-[320px] md:w-[380px] lg:w-[520px] xl:w-[620px] 2xl:w-[680px]"
               priority
             />
@@ -247,7 +246,7 @@ export default function HeroSection() {
 
       {/* CITY + ANIMATION STRIP */}
       <div className="relative z-20 mt-auto w-full">
-        <Image src={city} alt="City" className="relative z-0 w-full" />
+        <Image src={city} alt="City Background" className="relative z-0 w-full" />
 
         {/* BUS */}
         <motion.div
@@ -256,7 +255,7 @@ export default function HeroSection() {
             busDir === "right" ? "bottom-[3%]" : "bottom-[12%]"
           } left-0 z-30 w-[100px] sm:w-[160px] lg:w-[240px]`}
         >
-          <Image src={busDir === "right" ? schoolbusRight : schoolbusLeft} alt="Bus" />
+          <Image src={busDir === "right" ? schoolbusRight : schoolbusLeft} alt="Bus Image" />
         </motion.div>
 
         {/* PARENT */}
@@ -264,7 +263,7 @@ export default function HeroSection() {
           animate={parentControls}
           className="absolute bottom-[12%] z-20 w-[18px] sm:bottom-[14%] sm:w-[26px] md:bottom-[16%] md:w-[32px]"
         >
-          <Image src={parentType === "coming" ? parentComing : parentGoing} alt="Parent" />
+          <Image src={parentType === "coming" ? parentComing : parentGoing} alt="Parent Image" />
         </motion.div>
 
         {/* RIGHT MESSAGE  here*/}
@@ -272,7 +271,7 @@ export default function HeroSection() {
           animate={rightMsgControls}
           className="absolute right-[6%] bottom-[36%] -z-10 w-[90px]"
         >
-          <Image src={rightMsg1} alt="Right Msg" />
+          <Image src={rightMsg1} alt="Right side Message" />
         </motion.div>
 
         {/* LEFT MESSAGE */}
@@ -280,7 +279,7 @@ export default function HeroSection() {
           animate={leftMsgControls}
           className="absolute bottom-[36%] left-[2%] -z-10 w-[90px]"
         >
-          <Image src={leftMsgImage} alt="Left Msg" />
+          <Image src={leftMsgImage} alt="Left side Message" />
         </motion.div>
       </div>
       {showContactForm && <ContactUsForm onClose={() => setShowContactForm(false)} />}

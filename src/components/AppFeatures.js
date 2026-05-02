@@ -95,10 +95,10 @@ const FeatureCard = ({ text, icon, variant }) => {
     >
       {/* ICON */}
       <div className="relative h-10 w-10 shrink-0 rounded-md">
-        <Image src={icon} alt="" fill className="object-contain p-1" />
+        <Image src={icon} alt="feature icon" fill className="object-contain p-1" />
       </div>
 
-      <p className="text-center text-sm leading-snug sm:text-left">
+      <h3 className="text-center text-sm leading-snug sm:text-left">
         {/* MOBILE + TABLET */}
         <span className="block lg:hidden">
           {first}
@@ -108,7 +108,7 @@ const FeatureCard = ({ text, icon, variant }) => {
 
         {/* DESKTOP */}
         <span className="hidden lg:inline">{text}</span>
-      </p>
+      </h3>
     </div>
   );
 };
@@ -174,7 +174,7 @@ const AppFeatures = () => {
       {/* TOGGLE */}
       <div className="mb-10 flex justify-center px-3">
         <div className="bg-text-primary flex w-full max-w-[360px] rounded-full p-1">
-          <button
+          <button           
             onClick={() => setMode("parent")}
             className={`flex-1 rounded-full py-2 text-lg font-bold ${
               mode === "parent" ? "bg-white text-black" : "text-white"
